@@ -1,0 +1,14 @@
+{
+  "name": "tourismradium",
+  "version": "1.0.0",
+  "description": "scss for tourism radium project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Colin Cheverie",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
