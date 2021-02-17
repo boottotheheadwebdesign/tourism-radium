@@ -1,0 +1,86 @@
+// Things To Do carousel slider (see Home page)
+.things-to-do {
+    margin-top: 0 !important;
+    max-width: 100% !important;
+    overflow: hidden;
+    padding: 40px 0 !important;
+    
+    @media(min-width:1024px) {
+        padding: 80px 0 !important;
+    }
+
+    h2 {
+        @include heading-2();
+        text-align: center;
+    }
+
+    p {
+        @include heading-5();
+
+        @media(min-width: 1024px) {
+            padding: 0 12% 25px;
+        }
+        @media(min-width: 1300px) {
+            padding: 0 20% 25px;
+        }            
+    }  
+
+    .things-to-do-carousel {
+        margin-bottom: 50px;
+
+        .story {
+            &-item {              
+                margin: 0 5px; 
+                position: relative;
+
+                .article-thumbnail {
+                    overflow: hidden;
+                    img {
+                        border-radius: 12px 12px 0 0;
+                        transition: .5s;
+                    }
+
+                    a:hover {
+                        img {
+                            transform: scale(1.1);
+                            
+                        }
+                    }
+                }
+
+                h3 {
+                    position: absolute;
+                    top: 25%;
+                    left: auto;
+                    width: 100%;
+                    z-index: 1;
+                    text-align: center;
+                    font-size: 40px;
+                    display: flex;
+                    justify-content: center;
+                    @include heading-3();
+                    color: $white;
+                }
+            }
+        }        
+    }
+
+    // Slick enhancements
+    .slick-prev,
+    .slick-next {
+        z-index: 2;
+
+        &:before {
+            color: $gold;
+            font-size: 48px;
+        }
+    }
+
+    .slick-prev {
+        left: 5px;
+    }
+
+    .slick-next {
+        right: 25px;
+    }
+}

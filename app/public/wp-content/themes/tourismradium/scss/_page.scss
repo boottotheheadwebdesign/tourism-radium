@@ -1,0 +1,106 @@
+// Default template
+
+.page {
+    #masthead {
+        background-color: grey;
+    }
+
+    .entry-header {
+        display: none;
+    }
+    // Padding on top for nav
+    .entry-header {
+        display: none;
+    }    
+    .site-content {
+        margin-top: 140px;
+    }
+}
+
+
+// Home
+.home {
+
+    #masthead {
+        background-color: transparent;
+    }    
+    .site-main {
+        padding-top: 0 !important;
+    }
+    .site-content {
+        margin-top: 0;
+    }  
+    
+    // Home Hero
+    h1 {
+        font-family: $brandon;
+        font-weight: 900;
+        text-transform: uppercase; 
+
+        &:first-of-type {
+            @include outline(); 
+        }
+    }  
+    
+    .things-to-do {
+        max-width: 100% !important;        
+        margin-bottom: 0;      
+    }
+
+    .packages-deals {
+        max-width: 100% !important;        
+        margin-top: 0;
+        margin-bottom: 0;
+
+        h2 {
+            @include heading-2();
+            @include outline();
+        }
+
+        p {
+            @include heading-4();
+            text-transform: uppercase;
+            font-weight: 900;
+
+            @media(min-width: 1024px) {
+                padding: 0 12% 25px;
+            }
+            @media(min-width: 1300px) {
+                padding: 0 20% 25px;
+            }            
+        }
+    }
+
+    .getting-here {
+        margin-top: 0 !important;
+        margin-bottom: 0; 
+        max-width: 100% !important;
+        overflow: hidden;
+        padding: 40px 0 !important;
+        
+        @media(min-width:1024px) {
+            padding: 80px 0 !important;
+        }
+          
+
+        h2 {
+            @include heading-2();
+        }
+
+        p {
+            @include heading-5();
+
+            @media(min-width: 1024px) {
+                padding: 0 12% 25px;
+            }
+            @media(min-width: 1300px) {
+                padding: 0 20% 25px;
+            }            
+        }        
+    }
+
+    .featured-stories {
+        max-width: 100% !important;        
+        margin-bottom: 0;       
+    }    
+}

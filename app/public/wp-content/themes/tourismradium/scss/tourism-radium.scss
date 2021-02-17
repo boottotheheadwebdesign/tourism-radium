@@ -5,7 +5,12 @@
 @import 'header';
 @import 'footer';
 
+@import 'page';
 
 // Components
+@import 'components/notification-bar';
+@import 'components/things-to-do';
+@import 'components/featured-stories';
+
 
 // Blocks

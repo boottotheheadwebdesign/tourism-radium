@@ -1,3 +1,25 @@
+// Fonts
+/*
+    Brandon Grotesque weights (https://fonts.adobe.com/fonts/brandon-grotesque#details-section)
+    400 Regular
+    500 Medium
+    700 Bold
+    900 Black
+*/
+
+$brandon: 'brandon-grotesque', sans-serif;
+$helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
 // Colours
 $black: #000;
 $white: #fff;
+$green: #77ABA7;
+$darkgreen: #025959;
+$purple: #403A60;
+$yellow: #F2D479;
+$darkyellow: #F5D27A; // utility nav links
+$gold: #D9A121;
+$grey: #92959A;
+
+// Sizing
+$maxwidth: 1400px;

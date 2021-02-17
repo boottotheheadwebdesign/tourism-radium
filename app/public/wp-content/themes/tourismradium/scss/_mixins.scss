@@ -1,0 +1,11 @@
+// Outline used on Headings
+@mixin outline($fill:transparent, $width: 2px, $color: $yellow) {
+    color: $color;
+    -webkit-text-stroke-color: $color; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: $width;
+    -webkit-text-fill-color: $fill;   
+}
+
+// https://css-tricks.com/adding-stroke-to-web-text/
+
+// text-shadow: -1px 2px 0px $purple;

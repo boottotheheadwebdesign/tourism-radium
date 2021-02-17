@@ -1,0 +1,144 @@
+[06-Feb-2021 23:50:30 UTC] PHP Warning:  Use of undefined constant ’ - assumed '’' (this will throw an Error in a future version of PHP) in /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-content/themes/tourismradium/functions.php on line 53
+[06-Feb-2021 23:50:30 UTC] PHP Stack trace:
+[06-Feb-2021 23:50:30 UTC] PHP   1. {main}() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/admin-ajax.php:0
+[06-Feb-2021 23:50:30 UTC] PHP   2. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/admin-ajax.php:22
+[06-Feb-2021 23:50:30 UTC] PHP   3. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-load.php:37
+[06-Feb-2021 23:50:30 UTC] PHP   4. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-config.php:77
+[06-Feb-2021 23:50:30 UTC] PHP   5. do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-settings.php:557
+[06-Feb-2021 23:50:30 UTC] PHP   6. WP_Hook->do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/plugin.php:484
+[06-Feb-2021 23:50:30 UTC] PHP   7. WP_Hook->apply_filters() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:311
+[06-Feb-2021 23:50:30 UTC] PHP   8. create_accomodation_post_type() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:287
+[06-Feb-2021 23:50:30 UTC] PHP Warning:  Use of undefined constant ’ - assumed '’' (this will throw an Error in a future version of PHP) in /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-content/themes/tourismradium/functions.php on line 53
+[06-Feb-2021 23:50:30 UTC] PHP Stack trace:
+[06-Feb-2021 23:50:30 UTC] PHP   1. {main}() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/index.php:0
+[06-Feb-2021 23:50:30 UTC] PHP   2. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/index.php:10
+[06-Feb-2021 23:50:30 UTC] PHP   3. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/admin.php:34
+[06-Feb-2021 23:50:30 UTC] PHP   4. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-load.php:37
+[06-Feb-2021 23:50:30 UTC] PHP   5. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-config.php:77
+[06-Feb-2021 23:50:30 UTC] PHP   6. do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-settings.php:557
+[06-Feb-2021 23:50:30 UTC] PHP   7. WP_Hook->do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/plugin.php:484
+[06-Feb-2021 23:50:30 UTC] PHP   8. WP_Hook->apply_filters() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:311
+[06-Feb-2021 23:50:30 UTC] PHP   9. create_accomodation_post_type() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:287
+[06-Feb-2021 23:50:30 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-content/themes/tourismradium/functions.php:53) in /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/functions.php on line 6360
+[06-Feb-2021 23:50:30 UTC] PHP Stack trace:
+[06-Feb-2021 23:50:30 UTC] PHP   1. {main}() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/index.php:0
+[06-Feb-2021 23:50:30 UTC] PHP   2. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/index.php:10
+[06-Feb-2021 23:50:30 UTC] PHP   3. do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/admin.php:175
+[06-Feb-2021 23:50:30 UTC] PHP   4. WP_Hook->do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/plugin.php:484
+[06-Feb-2021 23:50:30 UTC] PHP   5. WP_Hook->apply_filters() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:311
+[06-Feb-2021 23:50:30 UTC] PHP   6. send_frame_options_header() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:285
+[06-Feb-2021 23:50:30 UTC] PHP   7. header() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/functions.php:6360
+[06-Feb-2021 23:50:30 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-content/themes/tourismradium/functions.php:53) in /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/includes/misc.php on line 1310
+[06-Feb-2021 23:50:30 UTC] PHP Stack trace:
+[06-Feb-2021 23:50:30 UTC] PHP   1. {main}() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/index.php:0
+[06-Feb-2021 23:50:30 UTC] PHP   2. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/index.php:10
+[06-Feb-2021 23:50:30 UTC] PHP   3. do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/admin.php:175
+[06-Feb-2021 23:50:30 UTC] PHP   4. WP_Hook->do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/plugin.php:484
+[06-Feb-2021 23:50:30 UTC] PHP   5. WP_Hook->apply_filters() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:311
+[06-Feb-2021 23:50:30 UTC] PHP   6. wp_admin_headers() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:287
+[06-Feb-2021 23:50:30 UTC] PHP   7. header() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/includes/misc.php:1310
+[06-Feb-2021 23:50:30 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-content/themes/tourismradium/functions.php:53) in /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/admin-header.php on line 9
+[06-Feb-2021 23:50:30 UTC] PHP Stack trace:
+[06-Feb-2021 23:50:30 UTC] PHP   1. {main}() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/index.php:0
+[06-Feb-2021 23:50:30 UTC] PHP   2. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/index.php:115
+[06-Feb-2021 23:50:30 UTC] PHP   3. header() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/admin-header.php:9
+[06-Feb-2021 23:50:30 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-content/themes/tourismradium/functions.php:53) in /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/option.php on line 1051
+[06-Feb-2021 23:50:30 UTC] PHP Stack trace:
+[06-Feb-2021 23:50:30 UTC] PHP   1. {main}() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/index.php:0
+[06-Feb-2021 23:50:30 UTC] PHP   2. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/index.php:115
+[06-Feb-2021 23:50:30 UTC] PHP   3. wp_user_settings() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/admin-header.php:70
+[06-Feb-2021 23:50:30 UTC] PHP   4. setcookie() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/option.php:1051
+[06-Feb-2021 23:50:30 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-content/themes/tourismradium/functions.php:53) in /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/option.php on line 1052
+[06-Feb-2021 23:50:30 UTC] PHP Stack trace:
+[06-Feb-2021 23:50:30 UTC] PHP   1. {main}() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/index.php:0
+[06-Feb-2021 23:50:30 UTC] PHP   2. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/index.php:115
+[06-Feb-2021 23:50:30 UTC] PHP   3. wp_user_settings() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/admin-header.php:70
+[06-Feb-2021 23:50:30 UTC] PHP   4. setcookie() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/option.php:1052
+[06-Feb-2021 23:50:31 UTC] PHP Warning:  Use of undefined constant ’ - assumed '’' (this will throw an Error in a future version of PHP) in /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-content/themes/tourismradium/functions.php on line 53
+[06-Feb-2021 23:50:31 UTC] PHP Stack trace:
+[06-Feb-2021 23:50:31 UTC] PHP Warning:  Use of undefined constant ’ - assumed '’' (this will throw an Error in a future version of PHP) in /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-content/themes/tourismradium/functions.php on line 53
+[06-Feb-2021 23:50:31 UTC] PHP   1. {main}() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/admin-ajax.php:0
+[06-Feb-2021 23:50:31 UTC] PHP Stack trace:
+[06-Feb-2021 23:50:31 UTC] PHP   2. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/admin-ajax.php:22
+[06-Feb-2021 23:50:31 UTC] PHP   1. {main}() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/admin-ajax.php:0
+[06-Feb-2021 23:50:31 UTC] PHP   3. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-load.php:37
+[06-Feb-2021 23:50:31 UTC] PHP   2. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/admin-ajax.php:22
+[06-Feb-2021 23:50:31 UTC] PHP   4. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-config.php:77
+[06-Feb-2021 23:50:31 UTC] PHP   5. do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-settings.php:557
+[06-Feb-2021 23:50:31 UTC] PHP   3. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-load.php:37
+[06-Feb-2021 23:50:31 UTC] PHP   4. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-config.php:77
+[06-Feb-2021 23:50:31 UTC] PHP   6. WP_Hook->do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/plugin.php:484
+[06-Feb-2021 23:50:31 UTC] PHP   5. do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-settings.php:557
+[06-Feb-2021 23:50:31 UTC] PHP   7. WP_Hook->apply_filters() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:311
+[06-Feb-2021 23:50:31 UTC] PHP   6. WP_Hook->do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/plugin.php:484
+[06-Feb-2021 23:50:31 UTC] PHP   8. create_accomodation_post_type() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:287
+[06-Feb-2021 23:50:31 UTC] PHP   7. WP_Hook->apply_filters() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:311
+[06-Feb-2021 23:50:31 UTC] PHP   8. create_accomodation_post_type() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:287
+[06-Feb-2021 23:50:31 UTC] PHP Warning:  Use of undefined constant ’ - assumed '’' (this will throw an Error in a future version of PHP) in /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-content/themes/tourismradium/functions.php on line 53
+[06-Feb-2021 23:50:31 UTC] PHP Stack trace:
+[06-Feb-2021 23:50:31 UTC] PHP   1. {main}() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/index.php:0
+[06-Feb-2021 23:50:31 UTC] PHP   2. require() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/index.php:17
+[06-Feb-2021 23:50:31 UTC] PHP   3. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-blog-header.php:13
+[06-Feb-2021 23:50:31 UTC] PHP   4. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-load.php:37
+[06-Feb-2021 23:50:31 UTC] PHP   5. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-config.php:77
+[06-Feb-2021 23:50:31 UTC] PHP   6. do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-settings.php:557
+[06-Feb-2021 23:50:31 UTC] PHP   7. WP_Hook->do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/plugin.php:484
+[06-Feb-2021 23:50:31 UTC] PHP   8. WP_Hook->apply_filters() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:311
+[06-Feb-2021 23:50:31 UTC] PHP   9. create_accomodation_post_type() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:287
+[06-Feb-2021 23:50:31 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-content/themes/tourismradium/functions.php:53) in /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/pluggable.php on line 1296
+[06-Feb-2021 23:50:31 UTC] PHP Stack trace:
+[06-Feb-2021 23:50:31 UTC] PHP   1. {main}() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/index.php:0
+[06-Feb-2021 23:50:31 UTC] PHP   2. require() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/index.php:17
+[06-Feb-2021 23:50:31 UTC] PHP   3. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-blog-header.php:19
+[06-Feb-2021 23:50:31 UTC] PHP   4. do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/template-loader.php:45
+[06-Feb-2021 23:50:31 UTC] PHP   5. WP_Hook->do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/plugin.php:484
+[06-Feb-2021 23:50:31 UTC] PHP   6. WP_Hook->apply_filters() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:311
+[06-Feb-2021 23:50:31 UTC] PHP   7. do_favicon() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:287
+[06-Feb-2021 23:50:31 UTC] PHP   8. wp_redirect() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/functions.php:1687
+[06-Feb-2021 23:50:31 UTC] PHP   9. header() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/pluggable.php:1296
+[06-Feb-2021 23:50:31 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-content/themes/tourismradium/functions.php:53) in /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/pluggable.php on line 1299
+[06-Feb-2021 23:50:31 UTC] PHP Stack trace:
+[06-Feb-2021 23:50:31 UTC] PHP   1. {main}() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/index.php:0
+[06-Feb-2021 23:50:31 UTC] PHP   2. require() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/index.php:17
+[06-Feb-2021 23:50:31 UTC] PHP   3. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-blog-header.php:19
+[06-Feb-2021 23:50:31 UTC] PHP   4. do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/template-loader.php:45
+[06-Feb-2021 23:50:31 UTC] PHP   5. WP_Hook->do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/plugin.php:484
+[06-Feb-2021 23:50:31 UTC] PHP   6. WP_Hook->apply_filters() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:311
+[06-Feb-2021 23:50:31 UTC] PHP   7. do_favicon() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:287
+[06-Feb-2021 23:50:31 UTC] PHP   8. wp_redirect() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/functions.php:1687
+[06-Feb-2021 23:50:31 UTC] PHP   9. header() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/pluggable.php:1299
+[06-Feb-2021 23:51:32 UTC] PHP Warning:  Use of undefined constant ’ - assumed '’' (this will throw an Error in a future version of PHP) in /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-content/themes/tourismradium/functions.php on line 53
+[06-Feb-2021 23:51:32 UTC] PHP Stack trace:
+[06-Feb-2021 23:51:32 UTC] PHP   1. {main}() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/admin-ajax.php:0
+[06-Feb-2021 23:51:32 UTC] PHP   2. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-admin/admin-ajax.php:22
+[06-Feb-2021 23:51:32 UTC] PHP   3. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-load.php:37
+[06-Feb-2021 23:51:32 UTC] PHP   4. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-config.php:77
+[06-Feb-2021 23:51:32 UTC] PHP   5. do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-settings.php:557
+[06-Feb-2021 23:51:32 UTC] PHP   6. WP_Hook->do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/plugin.php:484
+[06-Feb-2021 23:51:32 UTC] PHP   7. WP_Hook->apply_filters() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:311
+[06-Feb-2021 23:51:32 UTC] PHP   8. create_accomodation_post_type() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:287
+[17-Feb-2021 15:46:57 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/update.php on line 173
+[17-Feb-2021 15:46:57 UTC] PHP Stack trace:
+[17-Feb-2021 15:46:57 UTC] PHP   1. {main}() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-cron.php:0
+[17-Feb-2021 15:46:57 UTC] PHP   2. do_action_ref_array() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-cron.php:138
+[17-Feb-2021 15:46:57 UTC] PHP   3. WP_Hook->do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/plugin.php:551
+[17-Feb-2021 15:46:57 UTC] PHP   4. WP_Hook->apply_filters() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:311
+[17-Feb-2021 15:46:57 UTC] PHP   5. wp_version_check() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:287
+[17-Feb-2021 15:46:57 UTC] PHP   6. trigger_error() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/update.php:173
+[17-Feb-2021 15:46:57 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/update.php on line 408
+[17-Feb-2021 15:46:57 UTC] PHP Stack trace:
+[17-Feb-2021 15:46:57 UTC] PHP   1. {main}() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-cron.php:0
+[17-Feb-2021 15:46:57 UTC] PHP   2. do_action_ref_array() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-cron.php:138
+[17-Feb-2021 15:46:57 UTC] PHP   3. WP_Hook->do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/plugin.php:551
+[17-Feb-2021 15:46:57 UTC] PHP   4. WP_Hook->apply_filters() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:311
+[17-Feb-2021 15:46:57 UTC] PHP   5. wp_update_plugins() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:287
+[17-Feb-2021 15:46:57 UTC] PHP   6. trigger_error() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/update.php:408
+[17-Feb-2021 15:46:57 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/update.php on line 612
+[17-Feb-2021 15:46:57 UTC] PHP Stack trace:
+[17-Feb-2021 15:46:57 UTC] PHP   1. {main}() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-cron.php:0
+[17-Feb-2021 15:46:57 UTC] PHP   2. do_action_ref_array() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-cron.php:138
+[17-Feb-2021 15:46:57 UTC] PHP   3. WP_Hook->do_action() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/plugin.php:551
+[17-Feb-2021 15:46:57 UTC] PHP   4. WP_Hook->apply_filters() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:311
+[17-Feb-2021 15:46:57 UTC] PHP   5. wp_update_themes() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/class-wp-hook.php:287
+[17-Feb-2021 15:46:57 UTC] PHP   6. trigger_error() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/update.php:612
+[17-Feb-2021 16:33:58 UTC] WordPress database error Server shutdown in progress for query UPDATE `wp_options` SET `option_value` = 'O:8:\"stdClass\":4:{s:7:\"updates\";a:1:{i:0;O:8:\"stdClass\":10:{s:8:\"response\";s:6:\"latest\";s:8:\"download\";s:59:\"https://downloads.wordpress.org/release/wordpress-5.6.1.zip\";s:6:\"locale\";s:5:\"en_US\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:59:\"https://downloads.wordpress.org/release/wordpress-5.6.1.zip\";s:10:\"no_content\";s:70:\"https://downloads.wordpress.org/release/wordpress-5.6.1-no-content.zip\";s:11:\"new_bundled\";s:71:\"https://downloads.wordpress.org/release/wordpress-5.6.1-new-bundled.zip\";s:7:\"partial\";s:0:\"\";s:8:\"rollback\";s:0:\"\";}s:7:\"current\";s:5:\"5.6.1\";s:7:\"version\";s:5:\"5.6.1\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.6\";s:15:\"partial_version\";s:0:\"\";}}s:12:\"last_checked\";i:1613579638;s:15:\"version_checked\";s:5:\"5.6.1\";s:12:\"translations\";a:0:{}}', `autoload` = 'no' WHERE `option_name` = '_site_transient_update_core' made by include('phar:///Applications/Local.app/Contents/Resources/extraResources/bin/wp-cli/wp-cli.phar/php/boot-phar.php'), include('phar:///Applications/Local.app/Contents/Resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/wp-cli.php'), WP_CLI\bootstrap, WP_CLI\Bootstrap\LaunchRunner->process, WP_CLI\Runner->start, WP_CLI\Runner->run_command_and_exit, WP_CLI\Runner->run_command, WP_CLI\Dispatcher\Subcommand->invoke, call_user_func, WP_CLI\Dispatcher\CommandFactory::WP_CLI\Dispatcher\{closure}, call_user_func, Core_Command->check_update, Core_Command->get_updates, wp_version_check, set_site_transient, update_site_option, update_network_option, update_option
