@@ -6,6 +6,8 @@
     -webkit-text-fill-color: $fill;   
 }
 
-// https://css-tricks.com/adding-stroke-to-web-text/
+@mixin text-shadow($color: $gold) {
+    text-shadow: 2px 2px 0px $color;
+}
 
-// text-shadow: -1px 2px 0px $purple;
+// https://css-tricks.com/adding-stroke-to-web-text/

@@ -40,6 +40,9 @@
         &:first-of-type {
             @include outline(); 
         }
+        &:last-of-type {
+            @include text-shadow(); 
+        }        
     }  
     
     .things-to-do {
@@ -103,4 +106,120 @@
         max-width: 100% !important;        
         margin-bottom: 0;       
     }    
+}
+
+// Accommodations Landing & Details
+.post-type-archive-accommodation,
+.single-accommodation {
+  .site-main {
+        padding-top: 0;
+    }
+
+    .banner {
+        background-color: grey;
+        min-height: 500px;
+        width: 100%;
+        max-width: 100% !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__content {
+            text-align: center;            
+            flex-direction: column;
+
+            h2 {
+                @include heading-1();
+                color: $white !important;
+                @include text-shadow();
+            }
+
+            p {
+                @include heading-5();
+                color: $white !important;
+            }
+        }
+    }
+}
+
+.post-type-archive-accommodation {
+
+}
+
+.single-accommodation {
+
+    .entry-content {
+
+        h1 {
+        @include heading($color: $black, $weight: 700);
+            font-size: 36px;
+
+            @media(min-width: 768px) {
+                font-size: 48px;
+            }
+
+            @media(min-width: 1200px) {
+                font-size: 60px;
+            }     
+        }
+
+        .short-description {
+
+            p {
+                padding-bottom: 25px;
+            }
+        }
+
+        .accommodation-gallery {
+            .accommodation-gallery-slider-nav .slick-slide {
+                opacity: 0.5;
+            }
+
+            .accommodation-gallery-slider-nav .slick-slide.slick-current {
+                opacity: 1;
+                background: green;
+            }
+        }
+
+        .long-description {
+
+            p {
+                padding-bottom: 25px;
+            }
+        }
+
+        .amenities {
+            padding-top: 50px;
+            padding-bottom: 50px;
+
+            h3 {
+                @include heading-4();
+                text-align: center;
+                padding-bottom: 15px;
+                border-bottom: 1px solid #ccc;
+                margin-bottom: 20px;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                columns: 2;
+                -webkit-columns: 2;
+                -moz-columns: 2; 
+                column-gap: 40px;
+
+                @media(min-width: 481px) {
+                    columns: 3;
+                    -webkit-columns: 3;
+                    -moz-columns: 3;                     
+                }
+
+                @media(min-width: 800px) {
+                    columns: 4;
+                    -webkit-columns: 4;
+                    -moz-columns: 4;                     
+                }
+            }
+        }
+    }
 }

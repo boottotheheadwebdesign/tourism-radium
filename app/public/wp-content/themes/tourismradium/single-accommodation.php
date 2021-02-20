@@ -11,43 +11,97 @@
  */
 
 get_header();
+?>
+<section class="banner">
+	<div class="banner__content">
+		<h2>Where To Stay</h2>
+		<p>Radium is a place full of character and offers a variety of accommodations.</p>
+	</div>
+</section>
 
-echo "Accommodation Details page.";
-
+<?php
 /* Start the Loop */
 while ( have_posts() ) :
 	the_post();
+?>
 
-	get_template_part( 'template-parts/content/content-single' );
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	if ( is_attachment() ) {
-		// Parent post navigation.
-		the_post_navigation(
-			array(
-				/* translators: %s: parent post link. */
-				'prev_text' => sprintf( __( '<span class="meta-nav">Published in</span><span class="post-title">%s</span>', 'twentytwentyone' ), '%title' ),
-			)
-		);
-	}
+	<div class="entry-content">
 
-	// If comments are open or there is at least one comment, load up the comment template.
-	if ( comments_open() || get_comments_number() ) {
-		comments_template();
-	}
+		<?php if( get_field('accommodation_name') ): ?>
+			<h1><?php the_field('accommodation_name'); ?></h1>
+		<?php endif; ?>  
+		
+		<?php if( get_field('accommodation_short_description') ): ?>
+			<div class="short-description">
+				<?php the_field('accommodation_short_description'); ?>
+			</div>	
+		<?php endif; ?>  
 
-	// Previous/next post navigation.
-	$twentytwentyone_next = is_rtl() ? twenty_twenty_one_get_icon_svg( 'ui', 'arrow_left' ) : twenty_twenty_one_get_icon_svg( 'ui', 'arrow_right' );
-	$twentytwentyone_prev = is_rtl() ? twenty_twenty_one_get_icon_svg( 'ui', 'arrow_right' ) : twenty_twenty_one_get_icon_svg( 'ui', 'arrow_left' );
+		<?php if( get_field('accommodation_address') ): ?>
+			<p><?php the_field('accommodation_address'); ?></p>
+		<?php endif; ?>  	
+		<?php if( get_field('accommodation_phone') ): ?>
+			<p><?php the_field('accommodation_phone'); ?></p>
+		<?php endif; ?>  	
+		<?php if( get_field('accommodation_website_url') ): ?>
+			<p><a href="<?php the_field('accommodation_website_url'); ?>" target="_blank">Visit website</a></p>
+		<?php endif; ?>  					
 
-	$twentytwentyone_next_label     = esc_html__( 'Next post', 'twentytwentyone' );
-	$twentytwentyone_previous_label = esc_html__( 'Previous post', 'twentytwentyone' );
+		<section class="gallery">
+		<?php 
+		$images = get_field('accommodation_gallery');
+		$size = 'full'; // (thumbnail, medium, large, full or custom size)
+		if( $images ): ?>
+			<div class="accommodation-gallery-slider">
+				<?php foreach( $images as $image_id ): ?>
+				<figure>
+					<img src="<?php echo $image_id; ?>" alt=""/>
+				</figure>
+				<?php endforeach; ?>
+			</div>
+			<div class="accommodation-gallery-slider-nav">
+				<?php foreach( $images as $image_id ): ?>
+				<div>
+					<img src="<?php echo $image_id; ?>" alt=""/>
+				</div>
+				<?php endforeach; ?>				
+			</div>	
+		<?php endif; ?>	
+		</section>
+		
+		<?php if( get_field('accommodation_long_description') ): ?>
+			<div class="long-description">
+				<?php the_field('accommodation_long_description'); ?>
+			</div>	
+		<?php endif; ?>  		
+		
+		<?php 
+		$terms = get_field('accommodation_amenities');
+		if( $terms ): ?>
+			<div class="amenities">
+				<h3>Amenities</h3>
+				<ul>
+				<?php foreach( $terms as $term ): ?>
+					<li><?php echo $term->name; ?></li>
+				<?php endforeach; ?>
+				</ul>
+			</div>
+		<?php endif; ?>		
 
-	the_post_navigation(
-		array(
-			'next_text' => '<p class="meta-nav">' . $twentytwentyone_next_label . $twentytwentyone_next . '</p><p class="post-title">%title</p>',
-			'prev_text' => '<p class="meta-nav">' . $twentytwentyone_prev . $twentytwentyone_previous_label . '</p><p class="post-title">%title</p>',
-		)
-	);
+		<?php if( get_field('accommodation_book_now_url') ): ?>
+			<p class="center"><a class="btn" href="<?php the_field('accommodation_book_now_url'); ?>" target="_blank">Book Now</a></p>
+		<?php endif; ?>  
+
+	</div><!-- .entry-content -->
+
+	<!-- Extra page blocks here like Promotions and You might also like -->
+	<?php the_content(); ?>
+	
+</article><!-- #post-<?php the_ID(); ?> -->
+
+<?php
 endwhile; // End of the loop.
 
 get_footer();

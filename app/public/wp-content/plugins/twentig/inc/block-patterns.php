@@ -123,32 +123,37 @@ require_once TWENTIG_PATH . 'inc/class-twentig-block-patterns-registry.php';
  */
 function twentig_register_patterns() {
 
-	$path = TWENTIG_PATH . 'inc/patterns/twentytwentyone/';
-	if ( 'twentytwenty' === get_template() ) {
-		$path = TWENTIG_PATH . 'inc/patterns/twentytwenty/';
-	}
+	$path = 'twentytwenty' === get_template() ? TWENTIG_PATH . 'inc/patterns/twentytwenty/' : TWENTIG_PATH . 'inc/patterns/twentytwentyone/';
 
-	require_once $path . 'columns.php';
-	require_once $path . 'columns-text.php';
-	require_once $path . 'contact.php';
-	require_once $path . 'text-image.php';
-	require_once $path . 'cover.php';
-	require_once $path . 'cta.php';
-	require_once $path . 'events.php';
-	require_once $path . 'columns-text.php';
-	require_once $path . 'faq.php';
-	require_once $path . 'gallery.php';
-	require_once $path . 'hero.php';
-	require_once $path . 'latest-posts.php';
-	require_once $path . 'list.php';
-	require_once $path . 'logos.php';
-	require_once $path . 'numbers.php';
-	require_once $path . 'pricing.php';
-	require_once $path . 'team.php';
-	require_once $path . 'testimonials.php';
-	require_once $path . 'text.php';
-	require_once $path . 'video-audio.php';
-	require_once $path . 'pages.php';
+	$files = array(
+		'columns.php',
+		'columns-text.php',
+		'contact.php',
+		'text-image.php',
+		'cover.php',
+		'cta.php',
+		'events.php',
+		'columns-text.php',
+		'faq.php',
+		'gallery.php',
+		'hero.php',
+		'latest-posts.php',
+		'list.php',
+		'logos.php',
+		'numbers.php',
+		'pricing.php',
+		'team.php',
+		'testimonials.php',
+		'text.php',
+		'video-audio.php',
+		'pages.php',
+	);
+
+	foreach ( $files as $file ) {
+		if ( file_exists( $path . $file ) ) {
+			require_once $path . $file;
+		}
+	}
 }
 add_action( 'init', 'twentig_register_patterns' );
 

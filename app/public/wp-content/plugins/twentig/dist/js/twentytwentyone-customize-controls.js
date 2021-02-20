@@ -131,7 +131,7 @@
 						control.container.toggle( 'custom' !== layout && 'hidden' !== layout );				
 					});								
 				});				
-        api.control( 'twentig_footer_content' ).container.toggle( 'custom' === layout );
+		api.control( 'twentig_footer_content' ).container.toggle( 'custom' === layout );
 				if ( 'custom' !== layout && 'hidden' !== layout ) {
 					api.control( 'twentig_footer_credit_text' ).container.toggle( 'custom' === api( 'twentig_footer_credit' ).get() );
 				}					

@@ -11,6 +11,7 @@
 function twentig_twentyone_generate_color_variables() {
 	$colors = array(
 		array( 'twentig_primary_color', '--global--color-primary' ),
+		array( 'twentig_primary_color', '--global--color-secondary' ),
 		array( 'twentig_content_link_color', '--content--color--link' ),
 		array( 'twentig_header_background_color', '--header--color-background' ),
 		array( 'twentig_branding_color', '--branding--color-text' ),

@@ -66,33 +66,15 @@ add_action( 'get_template_part_template-parts/content/content', 'twentig_twentyo
  * @param int      $post_id The post ID.
  */
 function twentig_twentyone_post_class( $classes, $class, $post_id ) {
-	$post = get_post( $post_id );
-
-	if ( $post && 'post' === $post->post_type ) {
-		if ( ! is_singular() ) {
-			$post_meta = get_theme_mod( 'twentig_blog_meta', array( 'author', 'categories', 'tags' ) );
-			if ( empty( $post_meta ) ) {
-				$classes[] = 'tw-no-meta';
-			}
-		} else {
-			if ( 'no-image' === get_theme_mod( 'twentig_post_hero_layout' ) ) {
-				$classes = array_diff( $classes, array( 'has-post-thumbnail' ) );
-			}
-			if ( empty( get_theme_mod( 'twentig_post_bottom_meta', array( 'date', 'author', 'categories', 'tags' ) ) ) ) {
-				$classes[] = 'has-no-footer-meta';
+	if ( is_singular() ) {
+		$post_type   = get_post_type();
+		$hero_layout = get_theme_mod( 'twentig_' . $post_type . '_hero_layout' );
+		if ( false === $hero_layout && twentig_twentyone_is_cpt_single() ) {
+			$cpt_layout = get_theme_mod( 'twentig_cpt_single_layout' );
+			if ( $cpt_layout ) {
+				$hero_layout = get_theme_mod( 'twentig_' . $cpt_layout . '_hero_layout' );
 			}
 		}
-
-		if ( ! get_theme_mod( 'twentig_blog_meta_label', true ) ) {
-			$classes[] = 'tw-no-meta-label';
-		}
-	} elseif ( is_singular( 'page' ) ) {
-		if ( 'no-image' === get_theme_mod( 'twentig_page_hero_layout' ) ) {
-			$classes = array_diff( $classes, array( 'has-post-thumbnail' ) );
-		}
-	} elseif ( twentig_twentyone_is_cpt_single() ) {
-		$layout_option = get_theme_mod( 'twentig_cpt_single_layout' );
-		$hero_layout   = get_theme_mod( 'twentig_' . $layout_option . '_hero_layout' );
 		if ( 'no-image' === $hero_layout ) {
 			$classes = array_diff( $classes, array( 'has-post-thumbnail' ) );
 		}
@@ -115,22 +97,19 @@ function twentig_twentyone_display_featured_image( $can_show ) {
 		if ( ! get_theme_mod( 'twentig_blog_image', true ) ) {
 			return false;
 		}
-	} elseif ( is_singular( 'post' ) ) {
-		if ( 'no-image' === get_theme_mod( 'twentig_post_hero_layout' ) ) {
-			return false;
+	} elseif ( is_singular() ) {
+		$post_type   = get_post_type();
+		$hero_layout = get_theme_mod( 'twentig_' . $post_type . '_hero_layout' );
+		if ( false === $hero_layout && twentig_twentyone_is_cpt_single() ) {
+			$cpt_layout = get_theme_mod( 'twentig_cpt_single_layout' );
+			if ( $cpt_layout ) {
+				$hero_layout = get_theme_mod( 'twentig_' . $cpt_layout . '_hero_layout' );
+			}
 		}
-	} elseif ( is_singular( 'page' ) ) {
-		if ( 'no-image' === get_theme_mod( 'twentig_page_hero_layout' ) ) {
-			return false;
-		}
-	} elseif ( get_theme_mod( 'twentig_cpt_single_layout' ) && twentig_twentyone_is_cpt_single() ) {
-		$layout_option = get_theme_mod( 'twentig_cpt_single_layout' );
-		$hero_layout   = get_theme_mod( 'twentig_' . $layout_option . '_hero_layout' );
 		if ( 'no-image' === $hero_layout ) {
 			return false;
 		}
 	}
-
 	return $can_show;
 }
 add_filter( 'twenty_twenty_one_can_show_post_thumbnail', 'twentig_twentyone_display_featured_image' );

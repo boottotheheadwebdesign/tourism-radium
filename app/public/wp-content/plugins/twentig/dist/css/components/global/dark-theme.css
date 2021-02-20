@@ -1,0 +1,19 @@
+:root {
+	--error--color: #ff8b85;
+}
+
+.has-black-background-color a:not(.wp-block-button__link) {
+	color: var(--content--color--link, var(--global--color-primary));
+}
+
+.tw-cols-card-shadow a:not(.wp-block-button__link),
+.tw-cols-card-white a:not(.wp-block-button__link),
+.is-style-tw-shadow:not(.has-background) a:not(.wp-block-button__link) {
+	color: currentColor;
+}
+
+.tw-blog-card-shadow .hentry,
+.tw-blog-card-shadow .entry-footer,
+.tw-blog-card-shadow .entry-title a {
+	color: #000;	
+}

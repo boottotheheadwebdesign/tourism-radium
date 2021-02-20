@@ -223,6 +223,11 @@ add_filter( 'has_post_thumbnail', 'twentig_display_featured_image', 12 );
  * @param string $sizes A source size value for use in a 'sizes' attribute.
  */
 function twentig_calculate_image_sizes( $sizes ) {
+
+	if ( ! in_the_loop() ) {
+		return $sizes;
+	}
+
 	if ( is_home() || is_author() || is_category() || is_tag() || is_date() || is_tax( get_object_taxonomies( 'post' ) ) ) {
 		$blog_layout = get_theme_mod( 'twentig_blog_layout' );
 		if ( 'grid-basic' === $blog_layout || 'grid-card' === $blog_layout ) {
@@ -242,17 +247,21 @@ function twentig_calculate_image_sizes( $sizes ) {
 				$sizes = '(min-width: 620px) 580px, calc(100vw - 40px)';
 			}
 		}
-	} elseif ( is_singular( array( 'post', 'page' ) ) ) {
+	} elseif ( is_singular( array( 'post', 'page' ) ) && has_post_thumbnail() && ! is_page_template() ) {
 		$hero_layout = is_page() ? get_theme_mod( 'twentig_page_hero_layout' ) : get_theme_mod( 'twentig_post_hero_layout' );
 		if ( 'narrow-image' === $hero_layout ) {
-			$content_width = get_theme_mod( 'twentig_text_width' );
-			if ( 'wide' === $content_width ) {
-				$sizes = '(min-width: 880px) 800px, (min-width: 700px) calc(100vw - 80px), calc(100vw - 40px)';
-			} elseif ( 'medium' === $content_width ) {
-				$sizes = '(min-width: 780px) 700px, (min-width: 700px) calc(100vw - 80px), calc(100vw - 40px)';
-			} else {
-				$sizes = '(min-width: 620px) 580px, calc(100vw - 40px)';
+			static $ran = false;
+			if ( ! $ran ) {
+				$content_width = get_theme_mod( 'twentig_text_width' );
+				if ( 'wide' === $content_width ) {
+					$sizes = '(min-width: 880px) 800px, (min-width: 700px) calc(100vw - 80px), calc(100vw - 40px)';
+				} elseif ( 'medium' === $content_width ) {
+					$sizes = '(min-width: 780px) 700px, (min-width: 700px) calc(100vw - 80px), calc(100vw - 40px)';
+				} else {
+					$sizes = '(min-width: 620px) 580px, calc(100vw - 40px)';
+				}
 			}
+			$ran = true;
 		}
 	}
 	return $sizes;

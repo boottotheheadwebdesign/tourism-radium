@@ -5,7 +5,7 @@
  */
 function twentig_twentyone_plugins_setup() {
 	if ( class_exists( 'Jetpack' ) ) {
-		//Add theme support for Jetpack Infinite Scroll.
+		// Add theme support for Jetpack Infinite Scroll.
 		if ( function_exists( 'twentytwentyone_infinite_scroll_render' ) ) {
 			add_theme_support(
 				'infinite-scroll',

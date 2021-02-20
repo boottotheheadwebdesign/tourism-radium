@@ -5,7 +5,7 @@
  * Description: A toolkit for Twenty Twenty-One & Twenty Twenty that helps you build a beautiful website. Easily.
  * Author: Twentig
  * Author URI: https://twentig.com
- * Version: 1.2.5
+ * Version: 1.2.6
  * Text Domain: twentig
  * License: GPLv3 or later
  *
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Setup plugin constants.
  */
-define( 'TWENTIG_VERSION', '1.2.5' );
+define( 'TWENTIG_VERSION', '1.2.6' );
 define( 'TWENTIG_PATH', trailingslashit( plugin_dir_path( __FILE__ ) ) );
 define( 'TWENTIG_URI', trailingslashit( plugin_dir_url( __FILE__ ) ) );
 define( 'TWENTIG_ASSETS_URI', TWENTIG_URI . 'dist' );

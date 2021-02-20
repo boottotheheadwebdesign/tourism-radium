@@ -33,7 +33,7 @@ function twentig_twentytwenty_theme_scripts() {
 
 	// Skip enqueueing JavaScript if this is an AMP response.
 	if ( ! twentig_is_amp_endpoint() ) {
-		wp_enqueue_script( 'twentig-twentytwenty', TWENTIG_ASSETS_URI . '/js/twentig-twentytwenty.js', array(), '1.0' );
+		wp_enqueue_script( 'twentig-twentytwenty', TWENTIG_ASSETS_URI . "/js/twentig-twentytwenty{$min}.js", array(), '1.0' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'twentig_twentytwenty_theme_scripts', 12 );

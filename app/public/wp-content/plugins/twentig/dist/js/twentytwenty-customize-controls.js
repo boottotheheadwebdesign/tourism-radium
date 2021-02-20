@@ -214,7 +214,7 @@
 	
 		api( 'twentig_logo_font', function( setting ) {
 			var onChange = function( font ) {
-				if ( '' ===  font ) {		
+				if ( '' === font ) {		
 					updateControlFontWeights( 'twentig_logo_font_weight', api( 'twentig_heading_font' ).get() );
 					api.previewer.refresh();
 				} else if ( 'custom-google-font' === font ) {

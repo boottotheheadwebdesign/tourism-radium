@@ -879,10 +879,11 @@ function twentig_twentyone_customize_register( $wp_customize ) {
 			'section' => 'twentig_header_section',
 			'type'    => 'select',
 			'choices' => array(
-				''             => __( 'Default', 'twentig' ),
-				'inline-left'  => is_rtl() ? __( 'Menu on Right', 'twentig' ) : __( 'Menu on Left', 'twentig' ),
-				'stack-left'   => is_rtl() ? _x( 'Stack Right', 'layout', 'twentig' ) : _x( 'Stack Left', 'layout', 'twentig' ),
-				'stack-center' => _x( 'Stack Center', 'layout', 'twentig' ),
+				''              => __( 'Default', 'twentig' ),
+				'inline-left'   => is_rtl() ? __( 'Menu on Right', 'twentig' ) : __( 'Menu on Left', 'twentig' ),
+				'inline-center' => __( 'Centered Menu', 'twentig' ),
+				'stack-left'    => is_rtl() ? _x( 'Stack on Right', 'layout', 'twentig' ) : _x( 'Stack on Left', 'layout', 'twentig' ),
+				'stack-center'  => _x( 'Centered Stack', 'layout', 'twentig' ),
 			),
 		)
 	);
@@ -982,8 +983,9 @@ function twentig_twentyone_customize_register( $wp_customize ) {
 			'section' => 'twentig_header_section',
 			'type'    => 'select',
 			'choices' => array(
-				'mobile' => __( 'Mobile', 'twentig' ),
-				'tablet' => __( 'Tablet', 'twentig' ),
+				'mobile'           => __( 'Mobile', 'twentig' ),
+				'tablet'           => __( 'Portrait Tablet', 'twentig' ),
+				'tablet-landscape' => __( 'Landscape Tablet', 'twentig' ),
 			),
 		)
 	);
@@ -2355,6 +2357,38 @@ function twentig_twentyone_customize_register( $wp_customize ) {
 		)
 	);
 
+	/*
+	 * Performance Settings
+	 */
+
+	$wp_customize->add_section(
+		'twentig_performance_section',
+		array(
+			'title'    => __( 'Performance', 'twentig' ),
+			'panel'    => 'twentig_twentytwentyone_panel',
+			'priority' => 50,
+		)
+	);
+
+
+
+	$wp_customize->add_setting(
+		'twentig_theme_minify_css',
+		array(
+			'default'           => 0,
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		'twentig_theme_minify_css',
+		array(
+			'section' => 'twentig_performance_section',
+			'label'   => __( 'Minify the theme stylesheet to reduce its load time.', 'twentig' ),
+			'type'    => 'checkbox',
+		)
+	);
+
 	$wp_customize->add_setting(
 		'twentig_page_contact',
 		array(
@@ -2366,7 +2400,7 @@ function twentig_twentyone_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'twentig_page_contact',
 		array(
-			'section'         => 'twentig_additional_section',
+			'section'         => 'twentig_performance_section',
 			'label'           => 'Contact Form 7',
 			'type'            => 'dropdown-pages',
 			'description'     => __( 'Only loads the Contact Form 7 scripts on the selected page.', 'twentig' ),

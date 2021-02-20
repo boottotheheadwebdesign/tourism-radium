@@ -165,14 +165,14 @@
 	margin: 0;
 	padding: 0;
 	background-color: inherit;
-	outline: none;    
+	outline: none;
 	cursor: pointer;
 }
 
 .customize-control.customize-control-tw-range .tw-control-range-value{
-    margin-left: 10px;
-    width: 75px;
-    font-size: 13px;
+	margin-left: 10px;
+	width: 75px;
+	font-size: 13px;
 }
 
 .tw-control-range::-webkit-slider-runnable-track {
@@ -246,7 +246,7 @@
 	}
 }
 
-.wp-customizer .select2-container {   
+.wp-customizer .select2-container {
 	min-width: 100%;
 	max-width: 100%;
 }

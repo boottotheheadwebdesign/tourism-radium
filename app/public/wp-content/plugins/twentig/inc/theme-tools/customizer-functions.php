@@ -112,14 +112,27 @@ function twentig_render_reusable_block( $block_id ) {
 }
 
 /**
- * Remove line breaks and white space chars.
+ * Remove line breaks and superfluous whitespace.
  *
  * @param string $css String containing CSS.
- * @see wp_strip_all_tags
  */
 function twentig_minify_css( $css ) {
-	$css = preg_replace( '/[\r\n\t ]+/', ' ', $css );
-	return trim( $css );
+	if ( ! defined( 'SCRIPT_DEBUG' ) || ! SCRIPT_DEBUG ) {
+
+		// Remove breaks.
+		$css = preg_replace( '/[\r\n\t ]+/', ' ', $css );
+
+		// Remove rtl comments.
+		$css = preg_replace( '/\/\*rtl:ignore\*\//', '', $css );
+
+		// Remove whitespace around specific characters.
+		$css = preg_replace( '/\s+([{};,!>\)])/', '$1', $css );
+		$css = preg_replace( '/([{};,:>\(])\s+/', '$1', $css );
+
+		// Remove semicolon followed by closing bracket.
+		$css = str_replace( ';}', '}', $css );
+	}
+	return $css;
 }
 
 /**

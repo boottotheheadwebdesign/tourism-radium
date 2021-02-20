@@ -26,7 +26,7 @@ function twentig_twentyone_logo_transparent( $html ) {
 	} elseif ( is_singular() && ! is_page_template() ) {
 		$post_type   = get_post_type();
 		$hero_layout = get_theme_mod( 'twentig_' . $post_type . '_hero_layout' );
-		if ( ! $hero_layout && twentig_twentyone_is_cpt_single() ) {
+		if ( false === $hero_layout && twentig_twentyone_is_cpt_single() ) {
 			$cpt_layout = get_theme_mod( 'twentig_cpt_single_layout' );
 			if ( $cpt_layout ) {
 				$hero_layout = get_theme_mod( 'twentig_' . $cpt_layout . '_hero_layout' );

@@ -5,7 +5,7 @@ Tags: twenty-twenty-one, twentytwentyone, twenty twenty, blocks, gutenberg block
 Requires at least: 5.5
 Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -271,6 +271,27 @@ Yes! Twentig supports RTL (Right to Left) languages.
 10. **Create a custom 404 page.** Delight your visitors with a stunning 404 page.
 
 == Changelog ==
+
+= 1.2.6 =
+Release date: February 11, 2021
+
+For Twenty Twenty-One:
+
+* New: Adds centered menu layout.
+* New: Adds landscape tablet as a header breakpoint.
+* New: Adds option to load a minified version of the theme stylesheet.
+* Performance: Loads the CSS only when the options are enabled.
+* Enhancement: Updates the Google fonts .json file.
+* Accessibility: Adds aria-label to the header search submit button.
+* Accessibility: Adds screen-reader text to the header’s social icons.
+
+For Twenty Twenty-One & Twenty Twenty:
+
+* Performance: Improves the CSS to reduce the blocks CSS file size.
+* Performance: Improves the function that minifies the inline CSS.
+* Performance: Loads the minified version of Twentig frontend JavaScript file.  
+* Fix: Applies image sizes modifications only on featured images.
+* Fix: Restores the group shapes on mobile.
 
 = 1.2.5 =
 Release date: January 26, 2021

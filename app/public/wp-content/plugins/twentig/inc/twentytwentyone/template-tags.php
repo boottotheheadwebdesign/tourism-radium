@@ -18,7 +18,9 @@ if ( ! function_exists( 'twenty_twenty_one_post_thumbnail' ) ) {
 		<?php twentig_twentyone_entry_meta_header(); ?>
 		<?php
 		if ( ! twenty_twenty_one_can_show_post_thumbnail() ) {
-			remove_filter( 'wp_calculate_image_sizes', 'twentig_twentyone_calculate_image_sizes' );
+			if ( is_singular() ) {
+				remove_filter( 'wp_calculate_image_sizes', 'twentig_twentyone_calculate_image_sizes' );
+			}
 			return;
 		}
 		?>
@@ -38,6 +40,8 @@ if ( ! function_exists( 'twenty_twenty_one_post_thumbnail' ) ) {
 				<?php endif; ?>
 			</figure><!-- .post-thumbnail -->
 
+			<?php remove_filter( 'wp_calculate_image_sizes', 'twentig_twentyone_calculate_image_sizes' ); ?>
+
 		<?php else : ?>
 
 			<figure class="post-thumbnail">
@@ -51,8 +55,6 @@ if ( ! function_exists( 'twenty_twenty_one_post_thumbnail' ) ) {
 
 		<?php endif; ?>
 		<?php
-
-		remove_filter( 'wp_calculate_image_sizes', 'twentig_twentyone_calculate_image_sizes' );
 	}
 }
 
