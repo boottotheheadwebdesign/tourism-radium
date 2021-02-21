@@ -1,0 +1,79 @@
+// Card Component - Used on Accommodations Landing and Accommodation Blocks
+
+.card {
+    background-color: #EDEDED;
+    border-radius: 20px;
+    margin: 0 10px;
+    display: block;
+    position: relative;
+    padding: 0;
+    width: 100%;
+
+    .thumbnail {
+
+        img {
+            max-width: 100% !important;
+            display: block;
+            height: 100% !important;
+            width: 100%;
+            border-radius: 12px 12px 0 0;
+            object-fit: cover;
+        }
+    }
+
+    .card-content {
+        padding: 15px 20px;
+        width: 100%;
+        z-index: 1;
+        background-color: #EDEDED;
+        border-radius: 0 0 12px 12px;
+        transition: height 3s linear;
+        text-align: left;
+
+        &__name {
+            @include heading-5();
+            margin-bottom: 15px;
+
+            a {
+                text-decoration: none;
+                color: $purple;
+            }            
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1;
+            padding-bottom: 8px;
+
+            &.address,
+            &.phone,
+            &.website {
+                padding-left: 25px;
+                position: relative;
+                margin-bottom: 4px;
+
+                &:before {
+                    content: '\f3c5';
+                    font-family: $fa;
+                    display: block;
+                    margin-right: 10px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }                
+            }
+            &.phone {
+                &:before {
+                    content: '\f879';
+                }
+            }
+            &.website {
+                margin-bottom: 15px;
+
+                &:before {
+                    content: '\f0ac';
+                }
+            }            
+        }
+    }
+}

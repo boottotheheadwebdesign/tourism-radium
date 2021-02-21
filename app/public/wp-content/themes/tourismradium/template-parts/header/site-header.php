@@ -29,10 +29,22 @@ $wrapper_classes .= has_nav_menu( 'primary' ) ? ' has-menu' : '';
 	<?php
 	wp_nav_menu(
 		array(
+			'menu'  => 'secondary-menu',
+			'menu_class'      => 'social-menu-wrapper',
+			'items_wrap'      => '<ul id="social-menu-list" class="%2$s">%3$s</ul>',
+			'fallback_cb'     => false,
+			'link_before' => '<span>',
+			'link_after' => '</span>'
+		)
+	);	
+	wp_nav_menu(
+		array(
 			'menu'  => 'utility-menu',
 			'menu_class'      => 'utility-menu-wrapper',
 			'items_wrap'      => '<ul id="utility-menu-list" class="%2$s">%3$s</ul>',
 			'fallback_cb'     => false,
+			'link_before' => '<span>',
+			'link_after' => '</span>'			
 		)
 	);
 	?>

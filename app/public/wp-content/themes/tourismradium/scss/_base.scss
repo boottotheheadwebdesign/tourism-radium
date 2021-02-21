@@ -12,6 +12,9 @@ body {
   }
 }
 
+h1, h2, h3, h4, h5, h6, p, li, a {
+    font-family: $brandon !important;
+}
 
 /* Headings */
 
@@ -117,7 +120,7 @@ body {
 
 // Text variations
 .intro-text { // Used under titles, 30px
-
+    @include heading-5();
 } 
 .eyebrow { // Used above titles
     @include heading-4();
@@ -247,11 +250,28 @@ body {
 
 .lnk-book-now {
     color: $gold;
-    text-transform: uppercase;
+    display: inline-block;            
     font-size: 16px;
     font-weight: 700;
     text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    padding-right: 25px;
+
+    &:after {
+        content: '\f35d';
+        font-family: $fa;
+        position: absolute;
+        top: -2px;
+        right: 0;
+        font-weight: normal;
+    }
+
+    &:hover {
+        color: $darkgreen;
+    }
 }
+
 // Helpers
 .center {
     text-align: center;

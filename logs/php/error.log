@@ -150,3 +150,10 @@
 [17-Feb-2021 20:53:57 UTC] PHP   3. require_once() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-blog-header.php:19
 [17-Feb-2021 20:53:57 UTC] PHP   4. include() /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/template-loader.php:106
 [17-Feb-2021 22:57:08 UTC] PHP Parse error:  syntax error, unexpected ''echo'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-content/themes/tourismradium/archive-accommodation.php on line 27
+[20-Feb-2021 17:02:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function have_posts() on null in /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-content/themes/tourismradium/archive-accommodation.php:100
+Stack trace:
+#0 /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-includes/template-loader.php(106): include()
+#1 /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-blog-header.php(19): require_once('/Users/cjchever...')
+#2 /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/index.php(17): require('/Users/cjchever...')
+#3 {main}
+  thrown in /Users/cjcheverie/Documents/_Colin/Sites/tourism-radium/app/public/wp-content/themes/tourismradium/archive-accommodation.php on line 100

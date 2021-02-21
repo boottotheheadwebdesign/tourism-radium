@@ -49,7 +49,7 @@ while ( have_posts() ) :
 			<p><a href="<?php the_field('accommodation_website_url'); ?>" target="_blank">Visit website</a></p>
 		<?php endif; ?>  					
 
-		<section class="gallery">
+		<section class="accommodation-gallery">
 		<?php 
 		$images = get_field('accommodation_gallery');
 		$size = 'full'; // (thumbnail, medium, large, full or custom size)

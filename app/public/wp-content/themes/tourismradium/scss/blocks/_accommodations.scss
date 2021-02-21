@@ -1,7 +1,12 @@
 // Accommodations block
 .accommodation-block {
-padding-top: 80px;
-padding-bottom: 80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    @media(min-width: 1024px) {
+        padding-top: 80px;
+        padding-bottom: 80px;        
+    }
 
     h2 {
         @include heading-3();
@@ -32,60 +37,6 @@ padding-bottom: 80px;
                 width: 33%;
             }
         }           
-   
-        
-        // Card - used for Team Members, and other areas possibly
-        .card {
-            background-color: #EDEDED;
-            border-radius: 20px;
-            margin: 0 10px;
-            display: block;
-            position: relative;
-            padding: 0;
-            @media(min-width: 768px) {
-                //height: 170px;
-            }
-
-            .thumbnail {
-                
-                @media(min-width: 768px) {
-                    //min-height: 280px !important;
-                }
-
-                img {
-                    max-width: 100% !important;
-                    display: block;
-                    height: 100% !important;
-                    width: 100%;
-                    border-radius: 12px 12px 0 0;
-                    object-fit: cover;
-                }
-            }
-
-            .card-content {
-                padding: 15px 20px;
-                //min-height: 100px;
-                // position: absolute;
-                // bottom: 0;
-                // left: 0;
-                width: 100%;
-                z-index: 1;
-                background-color: #EDEDED;
-                border-radius: 0 0 12px 12px;
-                transition: height 3s linear;
-                text-align: left;
-
-                &__name {
-                    @include heading-5();
-                    margin-bottom: 15px;
-                }
-
-                p {
-                    font-size: 16px;
-                    line-height: 1;
-                    padding-bottom: 4px;
-                }
-            }
-        }        
+        // Card component styling under components/_card.scss      
     }
 }

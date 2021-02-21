@@ -18,7 +18,8 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<?php wp_head(); ?>
-    <link rel="stylesheet" href="https://use.typekit.net/yig5crv.css">
+	<link rel="stylesheet" href="https://use.typekit.net/yig5crv.css">	
+    <script src="https://kit.fontawesome.com/8b0457928c.js" crossorigin="anonymous"></script>
 </head>
 
 <body <?php body_class(); ?>>
