@@ -1,5 +1,4 @@
 <?php
-
 // Add Vendor scripts and custom CSS & JavaScript
 function tourism_radium_scripts_styles() {  
   wp_enqueue_script('slick', get_stylesheet_directory_uri().'/vendor/slick/slick.js', array('jquery'), 1.0, true);
@@ -10,7 +9,6 @@ function tourism_radium_scripts_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'tourism_radium_scripts_styles', 99);
 
-
 // Google map api key
 function my_acf_google_map_api( $api ){
     $api['key'] = 'AIzaSyCSF2m2IH8GoUISFWodLVlpMscf87mnDnI';
@@ -18,12 +16,10 @@ function my_acf_google_map_api( $api ){
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
-
 // Hide Comments in Admin left navigation
 add_action('admin_menu', function () {
     remove_menu_page('edit-comments.php');
 });
-
 
 // Add page slug as BODY class
 function add_slug_body_class( $classes ) {
@@ -36,7 +32,7 @@ function add_slug_body_class( $classes ) {
 add_filter( 'body_class', 'add_slug_body_class' );
 
 // Useful for Custom Post Types to flush
-flush_rewrite_rules( false );
+//flush_rewrite_rules( false );
 
 
 /* Add Custom Post Types - Accomodations, Service Providers, Offers */
@@ -65,10 +61,11 @@ function create_accomodation_post_type() {
       'public' => true,
       'has_archive' => true,
       'taxonomies' => array('category', 'post_tag'),
-      'supports' => array('title','editor','thumbnail'),
+      'supports' => array('title','editor','thumbnail', 'page-attributes'),
       'show_in_rest' => true,
       'menu_icon' => 'dashicons-store',
-      'menu_position' => 2,
+      'hierachical' => true,
+      'menu_position' => 21,
       'rewrite' => ['slug' => 'accommodations'],
       //'taxonomies' => ['accommodation_type']
     )
@@ -100,16 +97,52 @@ function create_promotion_post_type() {
       'public' => true,
       'has_archive' => true,
       'taxonomies' => array('category', 'post_tag'),
-      'supports' => array('title','editor','thumbnail'),
+      'supports' => array('title','editor','thumbnail', 'page-attributes'),
       'show_in_rest' => true,
-      'menu_icon' => 'dashicons-store',
-      'menu_position' => 2,
+      'menu_icon' => 'dashicons-awards',
+      'menu_position' => 22,
+      'hierachical' => true,
       'rewrite' => ['slug' => 'promotions'],
       //'taxonomies' => ['accommodation_type']
     )
   );
 }
 add_action( 'init', 'create_promotion_post_type' );
+
+// ** Services
+function create_service_post_type() {
+
+  register_post_type( 'service',
+    array(
+      'labels' => array(
+        'name'               => _x( 'Services', 'post type general name' ),
+        'singular_name'      => _x( 'Service', 'post type singular name' ),
+        'add_new'            => _x( 'Add New', 'service' ),
+        'add_new_item'       => __( 'Add New Service' ),
+        'edit_item'          => __( 'Edit Service' ),
+        'new_item'           => __( 'New Service' ),
+        'all_items'          => __( 'All Services' ),
+        'view_item'          => __( 'View Services' ),
+        'search_items'       => __( 'Search Services' ),
+        'not_found'          => __( 'No services found' ),
+        'not_found_in_trash' => __( 'No services found in the Trash' ), 
+        'menu_name'          => 'Services',
+        'can_export'          => true,       
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'taxonomies' => array('category', 'post_tag'),
+      'supports' => array('title','editor','thumbnail', 'page-attributes'),
+      'show_in_rest' => true,
+      'menu_icon' => 'dashicons-admin-multisite',
+      'menu_position' => 23,
+      'hierachical' => true,
+      'rewrite' => ['slug' => 'services'],
+      //'taxonomies' => ['accommodation_type']
+    )
+  );
+}
+add_action( 'init', 'create_service_post_type' );
 
 // Register Blocks
 add_action('acf/init', 'my_register_blocks');
@@ -135,9 +168,31 @@ function my_register_blocks() {
             'title'				=> __( 'Promotions'),
             'description'		=> __( 'A custom promotion block.'),
             'render_template'   => 'template-parts/blocks/promotion/block.php',
-            'category'			=> 'formatting',
-            'icon'				=> 'admin-comments',
+            'category'			=> 'misc',
+            'icon'				=> 'awards',
             'keywords'			=> array( 'promo', 'offer' )
-        ));           
+        ));    
+        
+        // Service Block
+        acf_register_block_type(array(
+            'name'				=> 'service',
+            'title'				=> __( 'Services'),
+            'description'		=> __( 'A custom local service providers block.'),
+            'render_template'   => 'template-parts/blocks/service/block.php',
+            'category'			=> 'admin',
+            'icon'				=> 'admin-multisite',
+            'keywords'			=> array( 'service', 'local', 'dine', 'restaurant' )
+        ));    
+        
+        // Featured Stories Block
+        acf_register_block_type(array(
+            'name'				=> 'featured-stories',
+            'title'				=> __( 'Featured Stories'),
+            'description'		=> __( 'A Featured Stories carousel block.'),
+            'render_template'   => 'template-parts/blocks/stories/block.php',
+            'category'			=> 'admin',
+            'icon'				=> 'book',
+            'keywords'			=> array( 'stories', 'news' )
+        ));          
     }
 }

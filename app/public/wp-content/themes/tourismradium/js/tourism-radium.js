@@ -42,27 +42,36 @@ $(document).ready(function () {
     if ($(".things-to-do-carousel").length) {
         $('.things-to-do-carousel').slick({
             centerMode: true,
-            slidesToShow: 3,
-            slidesToScroll: 1,
+            slidesToShow: 4,
+            slidesToScroll: 4,
             dots: false,
-            arrows: false,
+            arrows: true,
             infinite: true,
             cssEase: 'linear',
             variableHeight: true,
             variableWidth: false,
             responsive: [
                 {
-                    breakpoint: 1024,
+                    breakpoint: 1200,
                     settings: {
-                        slidesToShow: 2
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
                     }
                 },
                 {
                     breakpoint: 480,
                     settings: {
                         slidesToShow: 1,
+                        slidesToScroll: 1,
                         arrows: false,
-                        dots: true
+                        dots: false
                     }
                 }
             ]
@@ -73,8 +82,8 @@ $(document).ready(function () {
     if ($(".featured-stories-carousel").length) {
         $('.featured-stories-carousel').slick({
             centerMode: true,
-            slidesToShow: 3,
-            slidesToScroll: 1,
+            slidesToShow: 4,
+            slidesToScroll: 2,
             dots: false,
             arrows: false,
             infinite: true,

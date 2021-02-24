@@ -1,0 +1,148 @@
+
+// Home page styles
+.home {
+
+    #masthead {
+        background-color: transparent;
+    }    
+    .site-main {
+        padding-top: 0 !important;
+    }
+    .site-content {
+        margin-top: 0;
+    }  
+    
+    // Home Hero
+    h1 {
+        font-family: $brandon;
+        font-weight: 900;
+        text-transform: uppercase; 
+
+        &:first-of-type {
+            @include outline(); 
+        }
+        &:last-of-type {
+            @include text-shadow(); 
+        }        
+    }  
+    
+    .things-to-do {
+        max-width: 100% !important;        
+        margin-bottom: 0;      
+    }
+
+    .packages-deals {
+        max-width: 100% !important;        
+        margin-top: 0;
+        margin-bottom: 0;
+        //background-position: center 100px !important;
+        padding-bottom: 80px !important;
+
+        h2 {
+            @include heading-2();
+            @include outline();
+        }
+
+        p {
+            @include heading-4();
+            text-transform: uppercase;
+            font-weight: 900;
+
+            @media(min-width: 1024px) {
+                padding: 0 12% 25px;
+            }
+            @media(min-width: 1300px) {
+                padding: 0 20% 25px;
+            }            
+        }
+    }
+
+    .getting-here {
+        margin-top: 0 !important;
+        margin-bottom: 0; 
+        max-width: 100% !important;
+        overflow: hidden;
+        padding: 40px 0 !important;
+        
+        @media(min-width:1024px) {
+            padding: 80px 0 !important;
+        }
+          
+
+        h2 {
+            @include heading-2();
+        }
+
+        p {
+            @include heading-5();
+
+            @media(min-width: 1024px) {
+                padding: 0 12% 25px;
+            }
+            @media(min-width: 1300px) {
+                padding: 0 20% 25px;
+            }            
+        }        
+    }
+
+    .featured-stories {
+        max-width: 100% !important;        
+        margin-bottom: 0;       
+    }   
+    
+    .subscribe {
+        margin-top: 0 !important;
+        min-height: 600px;
+
+        h2 {
+            @include heading-2();
+            @include outline(); 
+        }
+
+        p {
+            @include heading-5();
+            color: $white !important;
+        }
+
+        .subscribe-form {
+            display: flex;
+            margin: 25px;
+
+            @media(min-width: 650px) {
+                margin: 25px auto;
+                max-width: 600px;                
+            }
+            
+            span.wpcf7-form-control-wrap {
+                margin-top: 0;
+            }
+            
+            input.wpcf7-email {
+                background-color: transparent;
+                border-color: $yellow;
+                border-radius: 12px 0 0 12px;
+                color: $yellow;
+                font-family: $brandon;
+
+                &::placeholder,
+                &::-moz-placeholder {
+                    color: $yellow;
+                }                
+            }
+
+            input.wpcf7-form-control.wpcf7-submit {
+                border-radius: 0 12px 12px 0;
+                border-color: $yellow;
+                background-color: $yellow;
+                padding: 12px;
+                line-height: 1;
+                height: 55px;
+            }
+
+        }
+
+        .wpcf7-response-output {
+            display: none !important;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+// Services block
+.service-block {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    @media(min-width: 1024px) {
+        padding-top: 80px;
+        padding-bottom: 80px;        
+    }
+
+    h2 {
+        @include heading-3();
+        text-align: center;
+    }
+
+    > p {
+        @include heading-5();
+        text-align: center;
+    }    
+
+    .services-listing {
+        max-width: 1024px;
+        margin: 25px auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .service-item {
+            width: 100%;
+            margin-bottom: 20px;
+            flex-grow: 1;
+            display: flex;
+
+            @media(min-width: 481px) {
+                width: 50%;
+            }
+
+            @media(min-width: 1024px) {
+                width: 33%;
+            }
+        }           
+        // Card component styling under components/_card.scss  
+        .card {
+            .thumbnail {
+                background-color: $white;
+                border-radius: 12px 12px 0 0;
+                min-height: 200px;
+                img {
+                    max-width: auto !important;
+                    height: auto !important;
+                    width: auto;
+                    border-radius: 0;
+                    object-fit: initial;
+                    margin: 0 auto;
+                    padding: 20px 0;
+                }
+            }   
+        }            
+    }
+}

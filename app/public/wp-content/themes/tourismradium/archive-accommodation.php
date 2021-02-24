@@ -127,11 +127,72 @@ get_header();
         <p class="page-grid__no-results">Sorry no results currently.</p>
     <?php endif; ?> 
         
+    <?php wp_reset_postdata(); ?> 
+
     </div> <!--/.page-grid-results -->
     
     <!-- Pagination -->
     <?php twenty_twenty_one_the_posts_navigation(); ?>
 
 </section> <!--/.page-grid -->
+
+<?php 
+  $args = array( 
+    'orderby' => 'post__in', //meta_value_num
+    //'order' => 'asc',
+    'post_type' => 'promotion',
+    'post__in' => $promotions,
+    'posts_per_page' => 3,
+    //'tag' => 'featured-eat-drink'
+  );
+$the_query = new WP_Query( $args ); 
+?>
+<section class="callout-current-promotions">
+    <div class="callout-heading">
+        <h2>Current Promotions</h2>
+    </div>
+    <div class="promotions-listing">
+        <?php 
+        if ( $the_query->have_posts() ) :
+            while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+            
+            <div class="promotion-item">         
+					<article class="card-alt">
+						<div class="thumbnail">
+							<?php if( get_field('promotion_logo', get_the_ID()) ): ?>
+								<img src="<?php the_field('promotion_logo', get_the_ID()); ?>" alt="<?php the_field('promotion_company', get_the_ID()); ?> logo">
+							<?php else : ?>
+								<img src="/wp-content/themes/tourismradium/images/services/logos/logo-fpo-wide.jpg" alt="FPO logo">
+							<?php endif; ?>  
+						</div>
+						<div class="card-content">
+						<?php if( get_field('promotion_title', get_the_ID()) ): ?>
+							<p class="title"><?php the_field('promotion_title', get_the_ID()); ?></p>
+						<?php endif; ?>   
+						<?php if( get_field('promotion_subtitle', get_the_ID()) ): ?>
+							<p class="subtitle"><?php the_field('promotion_subtitle', get_the_ID()); ?></p>
+						<?php endif; ?> 
+						<?php if( get_field('promotion_details', get_the_ID()) ): ?>
+							<p class="details"><?php the_field('promotion_details', get_the_ID()); ?></p>
+						<?php endif; ?> 
+						<?php if( get_field('promotion_url', get_the_ID()) ): ?>
+							<p class="promotion-url">
+								<a class="lnk-book-now" href="<?php the_field('promotion_url', get_the_ID()); ?>" target="_blank">
+									View Offer
+								</a>                            
+							</p>
+						<?php endif; ?>                                                             
+						</div>
+					</article>
+				</div> <!--/.promotion-item-->
+            
+            <?php endwhile; ?>
+        <?php endif;?>
+        <?php wp_reset_postdata(); ?>    
+    </div> <!--/.accommodations-listing-->
+
+      <p class="center"><a class="btn outline arrow" href="/accommodations">All Promotions</a></p>                      
+</section>
+
 
 <?php get_footer(); ?>

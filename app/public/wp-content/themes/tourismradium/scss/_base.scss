@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6, p, li, a {
 
 // Heading 4 - 36px
 @mixin heading-4() {
-  @include heading($color: $purple, $weight: 700);
+  @include heading($color: $purple, $weight: 700, $case: none);
     font-size: 22px;
 
     @media(min-width: 768px) {
@@ -102,7 +102,7 @@ h1, h2, h3, h4, h5, h6, p, li, a {
 
 // Heading 5 - 30px
 @mixin heading-5() {
-  @include heading($color: $purple, $weight: 700, $case:initial);
+  @include heading($color: $purple, $weight: 400, $case:initial);
     font-size: 20px;
 
     @media(min-width: 768px) {
@@ -249,7 +249,7 @@ h1, h2, h3, h4, h5, h6, p, li, a {
 }
 
 .lnk-book-now {
-    color: $gold;
+    color: $gold !important;
     display: inline-block;            
     font-size: 16px;
     font-weight: 700;
@@ -257,7 +257,8 @@ h1, h2, h3, h4, h5, h6, p, li, a {
     text-transform: uppercase;
     position: relative;
     padding-right: 25px;
-
+    margin-top: 15px;
+    
     &:after {
         content: '\f35d';
         font-family: $fa;
@@ -265,6 +266,7 @@ h1, h2, h3, h4, h5, h6, p, li, a {
         top: -2px;
         right: 0;
         font-weight: normal;
+        
     }
 
     &:hover {
@@ -272,11 +274,20 @@ h1, h2, h3, h4, h5, h6, p, li, a {
     }
 }
 
+// Background colours
+.bg-lightgrey {
+    background-color: $lightgrey;
+}
+
 // Helpers
 .center {
     text-align: center;
 }
 
+.border-12,
+.border-12 img {
+    border-radius: 12px;
+}
 
 // Card - used for Team Members, and other areas possibly
 .cardOLD {

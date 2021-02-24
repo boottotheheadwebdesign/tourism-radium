@@ -17,100 +17,13 @@
     }
 }
 
-
-// Home
-.home {
-
-    #masthead {
-        background-color: transparent;
-    }    
-    .site-main {
-        padding-top: 0 !important;
-    }
-    .site-content {
-        margin-top: 0;
-    }  
-    
-    // Home Hero
-    h1 {
-        font-family: $brandon;
-        font-weight: 900;
-        text-transform: uppercase; 
-
-        &:first-of-type {
-            @include outline(); 
-        }
-        &:last-of-type {
-            @include text-shadow(); 
-        }        
-    }  
-    
-    .things-to-do {
-        max-width: 100% !important;        
-        margin-bottom: 0;      
-    }
-
-    .packages-deals {
-        max-width: 100% !important;        
-        margin-top: 0;
-        margin-bottom: 0;
-
-        h2 {
-            @include heading-2();
-            @include outline();
-        }
-
-        p {
-            @include heading-4();
-            text-transform: uppercase;
-            font-weight: 900;
-
-            @media(min-width: 1024px) {
-                padding: 0 12% 25px;
-            }
-            @media(min-width: 1300px) {
-                padding: 0 20% 25px;
-            }            
-        }
-    }
-
-    .getting-here {
-        margin-top: 0 !important;
-        margin-bottom: 0; 
-        max-width: 100% !important;
-        overflow: hidden;
-        padding: 40px 0 !important;
-        
-        @media(min-width:1024px) {
-            padding: 80px 0 !important;
-        }
-          
-
-        h2 {
-            @include heading-2();
-        }
-
-        p {
-            @include heading-5();
-
-            @media(min-width: 1024px) {
-                padding: 0 12% 25px;
-            }
-            @media(min-width: 1300px) {
-                padding: 0 20% 25px;
-            }            
-        }        
-    }
-
-    .featured-stories {
-        max-width: 100% !important;        
-        margin-bottom: 0;       
-    }    
-}
-
 // Accommodations Landing & Details
+// Services Landing & Details
 .post-type-archive-accommodation,
-.single-accommodation {
+.single-accommodation,
+.post-type-archive-service,
+.single-service,
+.post-type-archive-promotion {
   .site-main {
         padding-top: 0;
 
@@ -136,7 +49,7 @@
             text-align: center;            
             flex-direction: column;
 
-            h2 {
+            h1, h2 {
                 @include heading-1();
                 color: $white !important;
                 @include text-shadow();
@@ -168,7 +81,17 @@
     }
 }
 
-.post-type-archive-accommodation {
+.post-type-archive-accommodation,
+.post-type-archive-service,
+.post-type-archive-promotion {
+
+    .widget-area {
+        margin-top: 0 !important;
+    }
+    .site-main {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
 
     &.accommodation-type-38 .page-grid-filters .page-grid-nav li:nth-of-type(1) a { text-decoration: underline; }
     &.accommodation-type-37 .page-grid-filters .page-grid-nav li:nth-of-type(2) a { text-decoration: underline; }
@@ -194,6 +117,7 @@
         align-items: center;
         padding: 0;
         margin: 0 10px 30px;
+        position: relative;
 
         .page-grid-nav {
             display: flex;
@@ -204,7 +128,7 @@
             margin: 0;
 
             li {
-                margin-right: 40px;
+                margin-right: 20px;
 
                 &:last-child {
                     margin-right: 0;
@@ -212,7 +136,7 @@
 
                 a {
                     color: $purple;
-                    font-size: 18px;
+                    font-size: 16px;
                     line-height: 1;
                     text-decoration: none;
                     text-transform: uppercase;
@@ -222,6 +146,14 @@
                         text-decoration: underline;
                     }
                 }
+
+                @media(min-width: 1080px) {
+                    margin-right: 40px;
+
+                    a {
+                        font-size: 18px;
+                    }
+                }                
             }
         }
 
@@ -234,7 +166,36 @@
             #cat {
                 display: none;
             }
-        }        
+        } 
+        
+        @media(max-width: 880px) {
+            .page-grid-nav {
+                padding-top: 50px;
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                justify-content: flex-start;
+                
+                li {
+                    max-width: 25%;               
+                    margin: 25px 0 0;
+                    
+                    @media(min-width: 480px) {
+                        flex: 1 0 auto;    
+                    }
+
+                    a {
+                        display: block;
+                        margin: 0 10px;
+                    }
+                }
+            }
+            .page-grid-dropdowns {
+                position: absolute;
+                top: 0;
+                right: 25px;
+            }
+        }
     }
 
     .page-grid-results {
@@ -243,7 +204,9 @@
         flex-wrap: wrap;
         width: 100%;
 
-        .accommodation-item {
+        .accommodation-item,
+        .service-item,
+        .promotion-item {
             width: 100%;
             margin-bottom: 20px;
             //flex-grow: 1;
@@ -260,9 +223,159 @@
             }
         }          
     }
+
+    .callout-where-to-stay {
+        padding-top: 180px;
+        padding-bottom: 80px;
+        background: #e0b34c url(../images/graphics/hillsyellow.jpg) left top no-repeat;
+        background-size: contain;
+
+        @media(min-width:1920px) {
+            background-size: cover;
+        }
+
+        .callout-heading {
+            text-align: center;
+
+            h2 {
+                @include heading-3();
+            }
+        }
+
+        .accommodations-listing {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0;            
+        }
+    }
 }
 
-.single-accommodation {
+.post-type-archive-service,
+.post-type-archive-promotion {
+
+    &.accommodation-type-41 .page-grid-filters .page-grid-nav li:nth-of-type(1) a { text-decoration: underline; }
+    &.accommodation-type-42 .page-grid-filters .page-grid-nav li:nth-of-type(2) a { text-decoration: underline; }
+    &.accommodation-type-43 .page-grid-filters .page-grid-nav li:nth-of-type(3) a { text-decoration: underline; }
+    &.accommodation-type-44 .page-grid-filters .page-grid-nav li:nth-of-type(4) a { text-decoration: underline; }
+  
+    .current-promotions,
+    .service-providers {
+        background-color: $lightgrey;
+        padding-top: 80px;
+        padding-bottom: 100px;
+
+        h2 {
+            @include heading-3();
+            text-transform: none !important;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+    }
+    .page-grid {    
+        .card {
+            .thumbnail {
+                background-color: $white;
+                border-radius: 12px 12px 0 0;
+                min-height: 200px;
+                img {
+                    max-width: auto !important;
+                    height: auto !important;
+                    width: auto;
+                    border-radius: 0;
+                    object-fit: initial;
+                    margin: 0 auto;
+                    padding: 20px 0;
+                }
+            }        
+        }
+    } 
+}
+
+.post-type-archive-accommodation {
+
+    .callout-current-promotions {
+        padding-top: 180px;
+        padding-bottom: 80px;
+        background: transparent url(../images/graphics/hillsyellow.png) left 100px no-repeat;
+        background-size: cover;
+
+        .callout-heading {
+            text-align: center;
+
+            h2 {
+                @include heading-4();
+            }
+        }
+
+        .promotions-listing {
+            max-width: 1024px;
+            margin: 40px auto;
+            padding: 0;  
+
+            .promotion-item {
+                margin: 0 25px 20px;
+            }
+        }         
+    } 
+}
+
+.post-type-archive-promotion {
+    .page-heading {
+        background-color: $lightgrey;
+    }
+
+    .current-promotions {
+        
+        h2 {
+            @include heading-4();
+        }        
+    }
+
+    .page-grid {    
+        .card {
+            background-color: $white;
+            .thumbnail {
+                background-color: $white;
+                border-radius: 12px 12px 0 0;
+                min-height: 200px;
+                img {
+                    max-width: auto !important;
+                    height: auto !important;
+                    width: auto;
+                    border-radius: 0;
+                    object-fit: initial;
+                    margin: 0 auto;
+                    padding: 20px 0;
+                }
+            } 
+            
+            &-content {
+                background-color: $white;
+
+                .title {
+                    @include heading-5();
+                    color: $gold !important;
+                    font-weight: 400 !important;
+                    margin-bottom: 5px;
+                }
+
+                .subtitle {
+                    @include heading-4();
+                    text-transform: none !important;
+                    margin-bottom: 0;                
+                }
+
+                .details {
+                    color: $purple;
+                }                
+            }
+        }
+    }     
+}
+
+.single-accommodation,
+.single-service,
+.single-promotion {
 
     .entry-content {
 
@@ -343,3 +456,4 @@
         }
     }
 }
+

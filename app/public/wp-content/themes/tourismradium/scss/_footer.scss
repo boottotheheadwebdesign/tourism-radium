@@ -13,6 +13,12 @@ aside.widget-area {
         font-size: 36px;
     }
 
+    .widget_media_image {
+        img {
+            max-width: 275px !important;
+        }
+    }
+
     .footer-contact-us {
 
         p {
@@ -34,6 +40,10 @@ aside.widget-area {
                         color: $yellow;
                     }
                 }
+            }
+
+            @media(min-width: 1400px) {
+                padding-right: 38%;
             }
         }
 
@@ -62,7 +72,7 @@ aside.widget-area {
 }
 
 .footer-navigation-wrapper {
-    justify-content: right;
+    justify-content: flex-end;
 
     li a {
         padding: 10px 5px;

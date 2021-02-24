@@ -1,0 +1,92 @@
+// Content Page Template
+.page-template-content-page-template {
+
+    // Fix top padding to allow banner to sit under main navigation...
+    #masthead {
+        background: transparent;
+    }
+    .site-content {
+        margin-top: 0;
+    }
+    .site-main {
+        padding-top: 0;
+    }
+    main article > .entry-content {
+        margin-top: 0;
+    }
+
+    // Base settings
+    .entry-content {
+        h2 {
+            @include heading-2();
+        }
+
+        h3 {
+            @include heading-3();
+        }
+
+        h4 {
+            @include heading-4();
+        }        
+    }
+
+    // top of page hero banner with H1 and intro text
+    .hero-banner {
+
+        h1 {
+            @include heading-1();
+            @include text-shadow();
+            color: $white !important;
+        
+            + p {
+                @include heading-4();
+                color: $white !important;
+                text-transform: none !important;
+            }
+
+        }        
+    }
+
+    // Section directly under Hero Banner
+    .page-intro {
+
+        @media(min-width: 1024px) {
+            padding-top: 80px !important;
+            padding-bottom: 80px !important;            
+        }
+        p {
+            @include heading-5();
+        }
+    }
+
+    // Accordions
+    .wp-block-coblocks-accordion-item {
+        margin-bottom: 8px;
+
+        &__title {
+            background-color: $green;
+            color: $white;
+            font-weight: 700;
+            font-family: $brandon;
+        }
+
+        &__content {
+            background-color: $lightgrey;
+            font-family: $brandon;
+            padding-top: 25px;
+        }
+        
+    }
+
+    // Featured Stories
+    .featured-stories-block {
+        background-color: $white;
+
+        h2 {
+            @include heading-3();
+            text-align: center;
+        }
+
+
+    }
+}

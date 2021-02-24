@@ -10,12 +10,14 @@
 
     h2 {
         @include heading-3();
+        text-align: center;
     }
 
     > p {
         @include heading-5();
+        text-align: center;
     }    
-
+}
     .accommodations-listing {
         max-width: 1024px;
         margin: 25px auto;
@@ -39,4 +41,3 @@
         }           
         // Card component styling under components/_card.scss      
     }
-}

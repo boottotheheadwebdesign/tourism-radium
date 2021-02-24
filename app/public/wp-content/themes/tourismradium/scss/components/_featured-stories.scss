@@ -81,15 +81,14 @@
                         @media(min-width:1024px) {
                             padding-right: 20%;
                         }
-
-                        a {
-
-                        
-                        @include heading-5();
-                        text-decoration: none;
-                        &:hover {
-                            color: $gold !important;
-                        }
+                        line-height: .5;
+                        a {                        
+                            @include heading-5();
+                            font-weight: 700;
+                            text-decoration: none;
+                            &:hover {
+                                color: $gold !important;
+                            }
                         }
                     }
 
@@ -122,5 +121,15 @@
 
     .slick-next {
         right: 25px;
+    }
+
+    &.featured-stories-block {
+        .featured-stories-carousel {
+            .story-item {
+                .article-content {
+                    background-color: $lightgrey;
+                }
+            }
+        }
     }
 }

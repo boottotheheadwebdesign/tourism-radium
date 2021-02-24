@@ -1,5 +1,23 @@
-// Utility nav
+#masthead {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100% !important;
+    padding-left: 25px;
+    padding-right: 25px;
+    align-items: flex-end;
+    
+    &.site-header {
+        padding-top: 40px;
+        padding-bottom: 50px;
+    }
 
+    .site-logo .custom-logo {
+        max-width: 200px;
+    }    
+}
+// Utility nav
 #utility-nav {
     background-color: $green;
     border-radius: 0 0 0 15px;
@@ -97,21 +115,8 @@
     }
 }
 
-#masthead {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    max-width: 100% !important;
-    padding-left: 25px;
-    padding-right: 25px;
-    align-items: flex-end;
-    
-    &.site-header {
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-}
+
+
 
 // Mega menu
 #mega-menu-wrap-primary #mega-menu-primary {
@@ -133,7 +138,18 @@
             > span.mega-indicator {
                 //display: none;
             }
-        }    
+        }  
+        
+        &.mega-current-menu-item > a.mega-menu-link,
+        &.mega-current-menu-ancestor > a.mega-menu-link {
+            background: none;
+            color: $darkgreen;
+
+            &:hover {
+                background: $darkgreen;
+                color: $white;
+            }
+        }
     }  
     
      > li.mega-menu-megamenu > ul.mega-sub-menu {
