@@ -12,10 +12,10 @@
 
 get_header();
 ?>
-<section class="banner">
+<section class="banner" style="background-image:url(/wp-content/themes/tourismradium/images/services/banner-getting-around.jpg)">
 	<div class="banner__content">
-		<h2>Getting Around</h2>
-		<p>The sidewalks in the Village of Radium Hot Springs are quiet, pleasant and easy to walk. Our little village has everything you need for a peaceful mountain escape.</p>
+		<h1>Services</h1>
+		<p>Radium Hot Springs is a mountain village with great local amenities.</p>
 	</div>
 </section>
 
@@ -29,70 +29,36 @@ while ( have_posts() ) :
 
 	<div class="entry-content">
 
-		<?php if( get_field('accommodation_name') ): ?>
-			<h1><?php the_field('accommodation_name'); ?></h1>
+		<?php if( get_field('service_name') ): ?>
+			<h1><?php the_field('service_name'); ?></h1>
 		<?php endif; ?>  
 		
-		<?php if( get_field('accommodation_short_description') ): ?>
+		<?php if( get_field('service_short_description') ): ?>
 			<div class="short-description">
-				<?php the_field('accommodation_short_description'); ?>
+				<?php the_field('service_short_description'); ?>
 			</div>	
 		<?php endif; ?>  
 
-		<?php if( get_field('accommodation_address') ): ?>
-			<p><?php the_field('accommodation_address'); ?></p>
-		<?php endif; ?>  	
-		<?php if( get_field('accommodation_phone') ): ?>
-			<p><?php the_field('accommodation_phone'); ?></p>
-		<?php endif; ?>  	
-		<?php if( get_field('accommodation_website_url') ): ?>
-			<p><a href="<?php the_field('accommodation_website_url'); ?>" target="_blank">Visit website</a></p>
-		<?php endif; ?>  					
+		<ul class="contact-details">
+			<?php if( get_field('service_address') ): ?>
+				<li class="address"><?php the_field('service_address'); ?></li>
+			<?php endif; ?>  	
+			<?php if( get_field('service_phone') ): ?>
+				<li class="phone"><?php the_field('service_phone'); ?></li>
+			<?php endif; ?>  	
+			<?php if( get_field('service_website') ): ?>
+				<li class="website"><a href="<?php the_field('service_website'); ?>" target="_blank">Visit website</a></li>
+			<?php endif; ?>  					
+		</ul> 
 
-		<section class="accommodation-gallery">
-		<?php 
-		$images = get_field('accommodation_gallery');
-		$size = 'full'; // (thumbnail, medium, large, full or custom size)
-		if( $images ): ?>
-			<div class="accommodation-gallery-slider">
-				<?php foreach( $images as $image_id ): ?>
-				<figure>
-					<img src="<?php echo $image_id; ?>" alt=""/>
-				</figure>
-				<?php endforeach; ?>
-			</div>
-			<div class="accommodation-gallery-slider-nav">
-				<?php foreach( $images as $image_id ): ?>
-				<div>
-					<img src="<?php echo $image_id; ?>" alt=""/>
-				</div>
-				<?php endforeach; ?>				
-			</div>	
-		<?php endif; ?>	
+		<section class="service-featured-photo">
+	<?php
+//Displays the featured image in a <img> tag resized to the 'large' thumbnail size (use this in a loop)
+echo get_the_post_thumbnail( get_the_ID(), 'large' );
+?>
 		</section>
-		
-		<?php if( get_field('accommodation_long_description') ): ?>
-			<div class="long-description">
-				<?php the_field('accommodation_long_description'); ?>
-			</div>	
-		<?php endif; ?>  		
-		
-		<?php 
-		$terms = get_field('accommodation_amenities');
-		if( $terms ): ?>
-			<div class="amenities">
-				<h3>Amenities</h3>
-				<ul>
-				<?php foreach( $terms as $term ): ?>
-					<li><?php echo $term->name; ?></li>
-				<?php endforeach; ?>
-				</ul>
-			</div>
-		<?php endif; ?>		
-
-		<?php if( get_field('accommodation_book_now_url') ): ?>
-			<p class="center"><a class="btn" href="<?php the_field('accommodation_book_now_url'); ?>" target="_blank">Book Now</a></p>
-		<?php endif; ?>  
+	
+		<p class="center"><a class="btn yellow-blue" href="/services">All Services</a></p>
 
 	</div><!-- .entry-content -->
 

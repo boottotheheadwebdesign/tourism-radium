@@ -1,4 +1,3 @@
-
 <?php
 /**
  * The template for displaying all single posts
@@ -12,7 +11,7 @@
 
 get_header();
 ?>
-<section class="banner">
+<section class="banner" style="background-image:url(/wp-content/uploads/2021/04/accommodation_banner.jpg)">
 	<div class="banner__content">
 		<h2>Where To Stay</h2>
 		<p>Radium is a place full of character and offers a variety of accommodations.</p>
@@ -33,21 +32,26 @@ while ( have_posts() ) :
 			<h1><?php the_field('accommodation_name'); ?></h1>
 		<?php endif; ?>  
 		
+
 		<?php if( get_field('accommodation_short_description') ): ?>
 			<div class="short-description">
 				<?php the_field('accommodation_short_description'); ?>
 			</div>	
 		<?php endif; ?>  
 
-		<?php if( get_field('accommodation_address') ): ?>
-			<p><?php the_field('accommodation_address'); ?></p>
-		<?php endif; ?>  	
-		<?php if( get_field('accommodation_phone') ): ?>
-			<p><?php the_field('accommodation_phone'); ?></p>
-		<?php endif; ?>  	
-		<?php if( get_field('accommodation_website_url') ): ?>
-			<p><a href="<?php the_field('accommodation_website_url'); ?>" target="_blank">Visit website</a></p>
-		<?php endif; ?>  					
+
+		<ul class="contact-details">
+			<?php if( get_field('accommodation_address') ): ?>
+				<li class="address"><?php the_field('accommodation_address'); ?></li>
+			<?php endif; ?>  	
+			<?php if( get_field('accommodation_phone') ): ?>
+				<li class="phone"><?php the_field('accommodation_phone'); ?></li>
+			<?php endif; ?>  	
+			<?php if( get_field('accommodation_website_url') ): ?>
+				<li class="website"><a href="<?php the_field('accommodation_website_url'); ?>" target="_blank">Visit website</a></li>
+			<?php endif; ?>  					
+		</ul>
+
 
 		<section class="accommodation-gallery">
 		<?php 

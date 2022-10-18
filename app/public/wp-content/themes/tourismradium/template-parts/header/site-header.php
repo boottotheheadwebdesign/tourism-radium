@@ -13,13 +13,6 @@ $wrapper_classes .= true === get_theme_mod( 'display_title_and_tagline', true ) 
 $wrapper_classes .= has_nav_menu( 'primary' ) ? ' has-menu' : '';
 ?>
 
-<div class="notification-bar">
-	<div class="notification-bar-wrapper">
-	<p><strong>WELCOME BACK TO RADIUM.</strong> Safety is the top priority of local businesses as we adjust to new procedures. <a href="#">Learn more ></a></p>
-	<a class="close-notification" href="#">X</a>
-</div>
-</div>
-
 <header id="masthead" class="<?php echo esc_attr( $wrapper_classes ); ?>" role="banner">
 
 	<?php get_template_part( 'template-parts/header/site-branding' ); ?>

@@ -15,8 +15,11 @@
 @import 'blocks/accommodations';
 @import 'blocks/promotions';
 @import 'blocks/services';
+@import 'blocks/feature-article';
+@import 'blocks/events';
 
 // Pages
 @import 'page';
 @import 'home';
 @import 'content-page'; // main template for bulk of pages
+@import 'blog';

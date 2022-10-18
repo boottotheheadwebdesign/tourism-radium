@@ -33,7 +33,8 @@ else:
     'orderby' => 'post__in', //meta_value_num
     //'order' => 'asc',
     'post_type' => 'accommodation',
-    'post__in' => $accommodations
+    'post__in' => $accommodations,
+    'posts_per_page' => 18
   );
 endif;
 
@@ -79,5 +80,5 @@ $the_query = new WP_Query( $args );
         <?php endif;?>
         <?php wp_reset_postdata(); ?>    
     </div> <!--/.accommodations-listing-->
-<p class="center"><a class="btn outline arrow" href="/accommodations">All Accommodations</a></p>
+<p class="center"><a class="btn outline" href="/accommodations">All Accommodations</a></p>
 </section> <!--/.accommodation-block-->

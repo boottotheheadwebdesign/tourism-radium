@@ -1,6 +1,6 @@
 // Featured Stories carousel slider (see Home page)
 .featured-stories {
-    background-color: #F4F4F5;
+    background-color: #fff;
     margin-top: 0 !important;
     max-width: 100% !important;
     overflow: hidden;
@@ -13,6 +13,12 @@
     h2 {
         @include heading-4();
         text-align: center;
+        text-transform: uppercase !important;
+
+        + p {
+            text-align: center;
+            margin-bottom: 40px;
+        }        
     }
 
     .featured-stories-carousel {
@@ -25,6 +31,22 @@
 
                 .article-thumbnail {
                     overflow: hidden;
+
+                    .post-thumbnail {
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        overflow: hidden;
+                        border-radius: 12px 12px 0 0;
+
+                        .wp-post-image {
+                            margin: 0;
+                        }
+                    }
+                    
+                    .wp-caption-text {
+                        display: none;
+                    }
+
                     img {
                         border-radius: 12px 12px 0 0;
                         transition: .5s;
@@ -32,15 +54,18 @@
 
                     a:hover {
                         img {
-                            transform: scale(1.1);
-                            
+                            transform: scale(1.1);                            
                         }
                     }
                 }
                 .article-content {
-                    background-color: $white;
+                    background-color: $lightgrey;
                     border-radius: 0 0 12px 12px;
                     padding: 15px;
+                    min-height: 200px;
+                    @media(min-width: 700px) {
+                        min-height: 260px;
+                    }
 
                     ul {
                         list-style: none;
@@ -84,7 +109,7 @@
                         line-height: .5;
                         a {                        
                             @include heading-5();
-                            font-weight: 700;
+                            font-weight: 700 !important;
                             text-decoration: none;
                             &:hover {
                                 color: $gold !important;
@@ -105,13 +130,18 @@
     }
 
     // Slick enhancements
-    .slick-prev,
+   .slick-prev,
     .slick-next {
         z-index: 2;
+        background: transparent url(../images/carousel-arrow.png) 0 0 no-repeat;
+        width: 75px;
+        height: 100px;
+        display: block;
 
         &:before {
             color: $gold;
             font-size: 48px;
+            content: '';
         }
     }
 
@@ -121,15 +151,7 @@
 
     .slick-next {
         right: 25px;
-    }
-
-    &.featured-stories-block {
-        .featured-stories-carousel {
-            .story-item {
-                .article-content {
-                    background-color: $lightgrey;
-                }
-            }
-        }
-    }
+        transform: rotate(180deg);
+        transform-origin: 60% 24%;  
+    } 
 }

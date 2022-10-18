@@ -9,14 +9,28 @@
     align-items: flex-end;
     
     &.site-header {
-        padding-top: 40px;
+        padding-top: 25px;
         padding-bottom: 50px;
+        @media(min-width: 375px) {
+            padding-top: 40px;
+        }
     }
 
     .site-logo .custom-logo {
-        max-width: 200px;
+        max-width: 150px;
+        @media(min-width: 769px) and (max-width: 901px) {
+            max-width: 125px;
+        }    
+
+        @media(min-width: 902px) {
+            max-width: 200px;
+        }        
     }    
+    .primary-navigation {
+        top: 8px;
+    }
 }
+
 // Utility nav
 #utility-nav {
     background-color: $green;
@@ -27,14 +41,18 @@
     z-index: 1;
     display: none;
 
-    @media(min-width: 768px) {
+    @media(min-width: 769px) {
         display: flex;
     }
 
     ul {
         list-style: none;
-        padding: 5px 10px 10px 5px;
+        padding: 7px 10px 10px 5px;
 
+        @media(min-width: 769px) and (min-width: 901px) {
+            padding: 15px 10px 18px 5px;
+        }  
+        
         &.header-actions {
             padding-left: 0;
             margin-left: 0;
@@ -56,7 +74,7 @@
                 color: $yellow;
                 font-weight: 700;
                 text-decoration: none;
-                font-size: 16px;
+                font-size: 20px;
                 font-family: $brandon;
 
                 &:hover {
@@ -129,7 +147,11 @@
             height: 50px;
             font-size: 20px;
 
-            @media(min-width:960px) {
+            @media(min-width: 769px) and (max-width: 901px) {
+                padding: 10px 20px 20px;
+            }    
+
+            @media(min-width:980px) {
                 font-size: 24px;
             }
             @media(min-width:1120px) {
@@ -143,7 +165,7 @@
         &.mega-current-menu-item > a.mega-menu-link,
         &.mega-current-menu-ancestor > a.mega-menu-link {
             background: none;
-            color: $darkgreen;
+            color: $gold;
 
             &:hover {
                 background: $darkgreen;
@@ -154,14 +176,21 @@
     
      > li.mega-menu-megamenu > ul.mega-sub-menu {
         padding-top: 20px;
-         padding-bottom: 30px;           
+         padding-bottom: 30px;    
+
          @media(min-width: 768px) {
             padding-top: 50px;
             padding-bottom: 50px;     
          }
 
+        background-image: url(/wp-content/themes/tourismradium/images/graphics/hillsgrey.png);
+        background-repeat: no-repeat;
+        background-position: center 100px;
+        background-size: cover;
+        display: block;
+
          .image-callout {
-             @media(max-width: 767px) {
+             @media(max-width: 768px) {
                  display: none;
              }
             .widget_media_image a {
@@ -210,6 +239,52 @@
     padding: 0;
 }
 
+#mega-menu-wrap-primary .mega-menu-toggle.mega-menu-open + #mega-menu-primary {
+    padding-bottom: 50px;
+}
+
 .menu-button-container {
     display: none;
+}
+
+// Mobile main nav tweaks
+@media(max-width: 481px) {
+    #masthead .primary-navigation {
+        top: 50px;
+    }
+}
+
+@media(max-width: 768px) {    
+    #mega-menu-wrap-primary .mega-menu-toggle {
+        background: transparent;
+    }
+
+    #mega-menu-wrap-primary .mega-menu-toggle .mega-toggle-block-2 .mega-toggle-animated-inner, 
+    #mega-menu-wrap-primary .mega-menu-toggle .mega-toggle-block-2 .mega-toggle-animated-inner::before, 
+    #mega-menu-wrap-primary .mega-menu-toggle .mega-toggle-block-2 .mega-toggle-animated-inner::after {
+        background-color: $white;
+    }
+
+    #mega-menu-wrap-primary .mega-menu-toggle + #mega-menu-primary {
+        background: $darkgreen;
+        padding-top: 15px;
+        padding-left: 15px;
+    }
+
+    #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu {
+        background: none;
+        padding-top: 0 !important;
+    }
+
+    #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link, 
+    #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link,
+    #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link {
+        color: $white;
+        font-size: 25px;
+    }
+
+    #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item h4.mega-block-title {
+        font-size: 20px;
+        margin-top: 25px;        
+    }
 }

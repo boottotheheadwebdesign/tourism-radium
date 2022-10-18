@@ -23,16 +23,32 @@
 
         h3 {
             @include heading-3();
+            text-transform: initial !important;
         }
 
         h4 {
             @include heading-4();
-        }        
+        }    
+        
+        h2,
+        h2 + p,
+        h3, 
+        h3 + p,
+        h4,
+        h4 + p {
+            margin-top: 0 !important;
+            margin-bottom: 10px !important;  
+            line-height: 1.2;          
+        }
     }
 
     // top of page hero banner with H1 and intro text
     .hero-banner {
 
+        .wp-block-coblocks-hero__content {
+            max-width: 1100px !important;
+        }
+        
         h1 {
             @include heading-1();
             @include text-shadow();
@@ -83,10 +99,21 @@
         background-color: $white;
 
         h2 {
-            @include heading-3();
+            @include heading-4();
+            text-transform: uppercase !important;        
             text-align: center;
+            margin-bottom: 15px !important;
         }
+    }
+    &.page-things-to-do,
+    &.page-where-to-stay,
+    &.page-plan-your-trip {
+        .featured-stories-block {
 
-
+            h2 {
+                @include heading-4();
+                text-transform: uppercase !important;
+            }        
+        }
     }
 }

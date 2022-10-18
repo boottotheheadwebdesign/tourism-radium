@@ -10,17 +10,39 @@
  */
 
 get_header();
+
+// Get values for banner, headline and subheading from CMS if they exist
+// Banner
+if( get_field('promotions_page_banner', 'option') ):
+	$banner = get_field('promotions_page_banner', 'option');
+else:
+    $banner = '/wp-content/themes/tourismradium/images/services/banner-getting-around.jpg';
+endif; 
+
+// Headline
+if( get_field('promotions_page_headline', 'option') ):
+	$headline = get_field('promotions_page_headline', 'option');
+else:
+    $headline = "Promotions";
+endif;
+
+// Subheadline
+if( get_field('promotions_page_subheadline', 'option') ):
+	$subheadline = get_field('promotions_page_subheadline', 'option');
+else:
+    $subheadline = "Discover our nearby national parks, hit the trails or relax and rejuvenate at the spa. There's no shortage of things to see and do in Radium.";
+endif;
 ?>
 
-<section class="banner" style="background-image:url(/wp-content/themes/tourismradium/images/services/banner-getting-around.jpg)">
+<section class="banner" style="background-image:url(<?php echo $banner; ?>)">
 	<div class="banner__content">
-		<h1>Promotions</h1>
-		<p>Discover our nearby national parks, hit the trails or relax and rejuvenate at the spa. There’s no shortage of things to see and do in Radium.</p>
+		<h1><?php echo $headline; ?></h1>
+		<p><?php echo $subheadline; ?></p>
 	</div>
 </section>
 
 <section class="page-heading">
-    <h1 class="heading-2">Lorem Ipsum</h1>
+    <h2 class="heading-2">Book Direct and Save</h1>
     <p class="intro-text">Spring and summer in Radium is a magical time for hiking, biking and birding. Unwind with a round of golf, enjoy a river float or white water rafting.</p>
 </section>
 
@@ -77,7 +99,7 @@ get_header();
         </div> <!--/.page-grid-results -->
         
         <!-- Pagination -->
-        <?php twenty_twenty_one_the_posts_navigation(); ?>
+        <?php custom_post_type_navigation(); ?>
     
     </section> <!--/.page-grid -->
 

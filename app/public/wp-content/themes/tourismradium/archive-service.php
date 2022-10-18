@@ -12,18 +12,35 @@
 get_header();
 
 //$description = get_the_archive_description();
+
+// Get values for banner, headline and subheading from CMS if they exist
+// Banner
+if( get_field('services_page_banner', 'option') ):
+	$banner = get_field('services_page_banner', 'option');
+else:
+    $banner = '/wp-content/themes/tourismradium/images/services/banner-getting-around.jpg';
+endif; 
+
+// Headline
+if( get_field('services_page_headline', 'option') ):
+	$headline = get_field('services_page_headline', 'option');
+else:
+    $headline = "Services";
+endif;
+
+// Subheadline
+if( get_field('services_page_subheadline', 'option') ):
+	$subheadline = get_field('services_page_subheadline', 'option');
+else:
+    $subheadline = "Radium Hot Springs is a mountain village with great local amenities.";
+endif;
 ?>
 
-<section class="banner" style="background-image:url(/wp-content/themes/tourismradium/images/services/banner-getting-around.jpg)">
+<section class="banner" style="background-image:url(<?php echo $banner; ?>)">
 	<div class="banner__content">
-		<h2>Getting Around</h2>
-		<p>The sidewalks in the Village of Radium Hot Springs are quiet, pleasant and easy to walk. Our little village has everything you need for a peaceful mountain escape.</p>
+		<h1><?php echo $headline; ?></h1>
+		<p><?php echo $subheadline; ?></p>
 	</div>
-</section>
-
-<section class="page-heading">
-    <h1 class="heading-2">Welcome To Radium</h1>
-    <p class="intro-text">Lorem ipsum dolor sit amet, Mei persius placerat et, qui et etiam veniam. Mei id suscipit definiebas vituperatoribus, altera admodum nec cu. Vel cu suas laboramus scripserit. An suas vidit reque vis, mel no tincidunt reprimique. His ad sanctus definitionem, habemus noluisse dignissim cum et.</p>
 </section>
 
 <div class="service-providers" id="results">
@@ -35,6 +52,7 @@ get_header();
                 <li><a href="/services?cat=42#results">Retail & Services</a></li>
                 <li><a href="/services?cat=43#results">Recreation</a></li>
                 <li><a href="/services?cat=44#results">Wellness</a></li>
+                <li><a href="/services?cat=140#results">Adventure / Tours</a></li>
                 <li><a href="/services#results">View All</a></li>
             </ul>
             <div class="page-grid-dropdowns">
@@ -100,14 +118,16 @@ get_header();
                 <div class="accommodation-item">         
                     <article class="card">
                         <div class="thumbnail">
+                            <a href="<?php the_permalink(); ?>">
                             <?php if( get_field('service_logo', get_the_ID()) ): ?>
                                 <img src="<?php the_field('service_logo', get_the_ID()); ?>" alt="<?php the_field('service_name', get_the_ID()); ?> logo">
                             <?php else : ?>
                                 <img src="/wp-content/themes/tourismradium/images/services/logos/logo-fpo.jpg" alt="FPO logo">
                             <?php endif; ?>  
+                            </a>
                         </div>
                         <div class="card-content">
-                            <h4 class="card-content__name"><?php the_field('service_name', get_the_ID()); ?></h4> 
+                            <h4 class="card-content__name"><a href="<?php the_permalink(); ?>"><?php the_field('service_name', get_the_ID()); ?></a></h4> 
                             <?php if( get_field('service_directions', get_the_ID()) ): ?>
                                 <p class="address"><a href="<?php the_field('service_directions', get_the_ID()); ?>" target="_blank">Get Directions</a></p>
                             <?php endif; ?>                          	
@@ -132,7 +152,7 @@ get_header();
         </div> <!--/.page-grid-results -->
         
         <!-- Pagination -->
-        <?php twenty_twenty_one_the_posts_navigation(); ?>
+        <?php custom_post_type_navigation(); ?>
     
     </section> <!--/.page-grid -->
 </div> <!--/.service-providers-->

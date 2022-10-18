@@ -11,21 +11,33 @@
 
 get_header();
 
+$searchTerm = $_GET['s'];
+?>
+
+<header class="page-header alignwide">
+	<h1 class="page-title">
+	Search
+	</h1>
+</header><!-- .page-header -->
+
+<?php
+if($searchTerm == "") {
+ get_search_form();
+} else {
 if ( have_posts() ) {
 	?>
-	<header class="page-header alignwide">
-		<h1 class="page-title">
-			<?php
+
+
+	<div class="search-result-count default-max-width">
+	<h3>
+				<?php
 			printf(
 				/* translators: %s: search term. */
 				esc_html__( 'Results for "%s"', 'twentytwentyone' ),
 				'<span class="page-description search-term">' . esc_html( get_search_query() ) . '</span>'
 			);
 			?>
-		</h1>
-	</header><!-- .page-header -->
-
-	<div class="search-result-count default-max-width">
+			</h3>
 		<?php
 		printf(
 			esc_html(
@@ -55,11 +67,11 @@ if ( have_posts() ) {
 	} // End the loop.
 
 	// Previous/next page navigation.
-	twenty_twenty_one_the_posts_navigation();
+	custom_post_type_navigation();
 
 	// If no content, include the "No posts found" template.
 } else {
 	get_template_part( 'template-parts/content/content-none' );
 }
-
+}
 get_footer();

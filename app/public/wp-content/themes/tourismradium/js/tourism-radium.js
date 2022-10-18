@@ -36,9 +36,8 @@ function closeNotification() {
 $(document).ready(function () {
 
     // Site wide alert bar
-    closeNotification();
+    //closeNotification(); - Added a plugin instead
 
-    // Things To Do carousel
     if ($(".things-to-do-carousel").length) {
         $('.things-to-do-carousel').slick({
             centerMode: true,
@@ -70,8 +69,40 @@ $(document).ready(function () {
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1,
-                        arrows: false,
-                        dots: false
+                        arrows: false
+                    }
+                }
+            ]
+        });
+    }
+
+    // Things To Do ALT carousel
+    if ($(".things-to-do-carousel-alt").length) {
+        $('.things-to-do-carousel-alt').slick({
+            centerMode: true,
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            dots: false,
+            arrows: true,
+            infinite: true,
+            cssEase: 'linear',
+            variableHeight: true,
+            variableWidth: false,
+            responsive: [
+                {
+                    breakpoint: 900,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        arrows: true
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        arrows: false
                     }
                 }
             ]
@@ -83,26 +114,35 @@ $(document).ready(function () {
         $('.featured-stories-carousel').slick({
             centerMode: true,
             slidesToShow: 4,
-            slidesToScroll: 2,
+            slidesToScroll: 4,
             dots: false,
-            arrows: false,
+            arrows: true,
             infinite: true,
             cssEase: 'linear',
             variableHeight: true,
             variableWidth: false,
             responsive: [
                 {
-                    breakpoint: 1024,
+                    breakpoint: 1530,
                     settings: {
-                        slidesToShow: 2
+                        slidesToShow: 3,
+                        slidesToScroll: 3
                     }
                 },
                 {
-                    breakpoint: 480,
+                    breakpoint: 1000,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 500,
                     settings: {
                         slidesToShow: 1,
-                        arrows: false,
-                        dots: true
+                        slidesToScroll: 1,
+                        dots: true,
+                        arrows: false
                     }
                 }
             ]

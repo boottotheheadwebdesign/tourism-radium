@@ -55,14 +55,16 @@ $the_query = new WP_Query( $args );
             <div class="service-item">         
                 <article class="card">
                     <div class="thumbnail">
+                        <a href="<?php the_permalink(); ?>">
                         <?php if( get_field('service_logo', get_the_ID()) ): ?>
                             <img src="<?php the_field('service_logo', get_the_ID()); ?>" alt="<?php the_field('service_name', get_the_ID()); ?> logo">
                         <?php else : ?>
                             <img src="/wp-content/themes/tourismradium/images/services/logos/logo-fpo.jpg" alt="FPO logo">
                         <?php endif; ?>  
+                        </a>
                     </div>
                     <div class="card-content">
-                        <h4 class="card-content__name"><?php the_field('service_name', get_the_ID()); ?></h4> 
+                        <h4 class="card-content__name"><a href="<?php the_permalink(); ?>"><?php the_field('service_name', get_the_ID()); ?></a></h4> 
                         <?php if( get_field('service_directions', get_the_ID()) ): ?>
                             <p class="address"><a href="<?php the_field('service_directions', get_the_ID()); ?>" target="_blank">Get Directions</a></p>
                         <?php endif; ?>                          	
@@ -80,5 +82,5 @@ $the_query = new WP_Query( $args );
         <?php endif;?>
         <?php wp_reset_postdata(); ?>    
     </div> <!--/.services-listing-->
-<p class="center"><a class="btn outline arrow" href="/services">All Services</a></p>
+<p class="center"><a class="btn outline arrow" href="/services">View All</a></p>
 </section> <!--/.service-block-->

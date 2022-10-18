@@ -12,10 +12,19 @@ body {
   }
 }
 
-h1, h2, h3, h4, h5, h6, p, li, a {
+h1, h2, h3, h4, h5, h6, p, li, a, div {
     font-family: $brandon !important;
 }
 
+// reset global var causing background solid
+:root {
+--global--color-gray: transparent;
+--button--color-background: transparent;
+}
+
+.tw-hero-cover .post-thumbnail {
+    position: initial;
+}
 /* Headings */
 
 @mixin heading($color:$yellow,$case:uppercase,$weight:900) {
@@ -31,17 +40,19 @@ h1, h2, h3, h4, h5, h6, p, li, a {
 // Heading 1 - 110px
 @mixin heading-1() {
   @include heading();
-    font-size: 48px;
+    font-size: 45px;
 
+    @media(min-width: 340px) {
+        font-size: 48px;
+    }     
+    @media(min-width: 400px) {
+        font-size: 60px;
+    }    
     @media(min-width: 768px) {
         font-size: 75px;
     }
 
-    // @media(min-width: 1024px) {
-    //     font-size: 75px;
-    // }
-
-    @media(min-width: 1200px) {
+    @media(min-width: 1400px) {
         font-size: 110px;
     }  
 }
@@ -52,7 +63,7 @@ h1, h2, h3, h4, h5, h6, p, li, a {
 // Heading 2 - 72px
 @mixin heading-2() {
   @include heading($color: $purple);
-    font-size: 40px;
+    font-size: 32px;
 
     @media(min-width: 768px) {
         font-size: 60px;
@@ -122,13 +133,16 @@ h1, h2, h3, h4, h5, h6, p, li, a {
 .intro-text { // Used under titles, 30px
     @include heading-5();
 } 
+
 .eyebrow { // Used above titles
     @include heading-4();
-    color: $yellow;
+    color: $gold !important;
+    text-transform: uppercase !important;
+    font-weight: 900 !important;
 }
+
 .large-text { // Used under titles, all caps 36px
     @include heading-4();
-
 }
 
 
@@ -141,15 +155,19 @@ h1, h2, h3, h4, h5, h6, p, li, a {
     color: $color !important;
     display: inline-block !important;
     font-family: $brandon !important;
-    font-size: 24px !important;
+    font-size: 18px !important;
     font-weight: 700 !important;  
     letter-spacing: 0px !important;
     min-width: 200px;
-    padding: $padding !important;
+    padding: 8px 18px !important;
     text-align: center !important;
     text-decoration: none !important;
     text-transform: uppercase !important;
-    //margin-bottom: 10px;
+
+    @media(min-width:1024px) {
+        font-size: 24px !important;
+        padding: $padding !important;
+    }
 
     @if $arrow {
         &:after {
@@ -186,7 +204,7 @@ h1, h2, h3, h4, h5, h6, p, li, a {
             border: 0 !important;
             padding: 0 !important;
             line-height: inherit;
-            color: inherit;
+            color: inherit !important;
             font-weight: inherit;
             font-family: inherit;
             font-size: inherit;
@@ -222,6 +240,10 @@ h1, h2, h3, h4, h5, h6, p, li, a {
 
     &.yellow-blue {
         @include btn($background: $yellow, $border: $yellow, $color: $purple); 
+    }
+
+    &.yellow {
+        @include btn($background: $yellow, $border: $yellow, $color: $white); 
     }
 
     &.is-style-outline {

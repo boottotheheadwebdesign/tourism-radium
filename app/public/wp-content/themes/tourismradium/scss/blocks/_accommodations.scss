@@ -2,6 +2,7 @@
 .accommodation-block {
     padding-top: 40px;
     padding-bottom: 40px;
+    margin-bottom: 0;
 
     @media(min-width: 1024px) {
         padding-top: 80px;
@@ -9,7 +10,16 @@
     }
 
     h2 {
-        @include heading-3();
+  @include heading($color: $purple);
+    font-size: 28px !important;
+
+    @media(min-width: 768px) {
+        font-size: 36px !important;
+    }
+
+    @media(min-width: 1200px) {
+        font-size: 48px !important;
+    } 
         text-align: center;
     }
 
@@ -18,26 +28,39 @@
         text-align: center;
     }    
 }
-    .accommodations-listing {
-        max-width: 1024px;
-        margin: 25px auto;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
 
-        .accommodation-item {
-            width: 100%;
-            margin-bottom: 20px;
-            flex-grow: 1;
-            display: flex;
+.accommodations-listing {
+    margin: 25px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 95%;
 
-            @media(min-width: 481px) {
-                width: 50%;
-            }
-
-            @media(min-width: 1024px) {
-                width: 33%;
-            }
-        }           
-        // Card component styling under components/_card.scss      
+    @media(min-width: 481px) {
+        max-width: 80%;
     }
+
+    @media(min-width: 768px) {
+        max-width: 70%;
+    }
+
+    @media(min-width: 1024px) {
+        max-width: 90%;
+    }
+
+    @media(min-width: 1240px) {
+        max-width: 1200px;
+    } 
+
+    .accommodation-item {
+        width: 100%;
+        margin-bottom: 20px;
+        flex-grow: 1;
+        display: flex;
+
+        @media(min-width: 1024px) {
+            width: 50%;
+        }
+    }           
+    // Card component styling under components/_card.scss      
+}

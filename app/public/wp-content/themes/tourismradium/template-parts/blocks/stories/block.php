@@ -20,109 +20,68 @@ if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
 
+
+$argType = get_field( 'loop_argument_type' );
+if( $argType == "count" ) :
+  $args = array( 
+    'orderby' => 'meta_value_num',
+    'post_type' => 'post',
+    'posts_per_page' => get_field( 'featured_stories_count' )
+  );
+else:
+  $featuredStories = get_field( 'select_featured_stories' );
+  $args = array( 
+    'orderby' => 'post__in', //meta_value_num
+    //'order' => 'asc',
+    'post_type' => 'post',
+    'post__in' => $featuredStories
+  );
+endif;
+
+$the_query = new WP_Query( $args );
+
 ?>
 
 <section id="<?php echo esc_attr($id); ?>" class="featured-stories <?php echo esc_attr($className); ?>">
-    <h2>Featured Stories</h2>
+
+    <?php if( get_field('block_featured_stories_title') ): ?>
+        <h2><?php the_field('block_featured_stories_title'); ?></h2>
+    <?php endif; ?>
+    <?php if( get_field('block_featured_stories_paragraph') ): ?>
+        <p><?php the_field('block_featured_stories_paragraph'); ?></p>
+    <?php endif; ?>
     <div class="featured-stories-carousel">
-        <div class="story">
-            <article class="story-item" id="">
-                <div class="article-thumbnail">
-                    <a href="#"><img src="/wp-content/themes/tourismradium/images/article.png"></a>
+       <?php 
+        if ( $the_query->have_posts() ) :
+            while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                <div class="story">
+                    <article class="story-item" id="">
+                        <div class="article-thumbnail">
+                            <a href="<?php the_permalink(); ?>"><?php twenty_twenty_one_post_thumbnail(); ?></a>
+                        </div>
+                        <div class="article-content">
+                            <?php 
+                            $category = get_the_category();
+                            //the_category('');                      
+                            ?>  
+
+                            <ul>
+                                <li><a href="/stories"><?php echo $category[0]->cat_name ?></a></li>
+                            </ul>
+                            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                            <a class="read-more" href="<?php the_permalink(); ?>"><?php echo reading_time();?> Read &gt;</a>
+                            
+                        </div>
+                    </article>
                 </div>
-                <div class="article-content">
-                    <ul>
-                        <li><a href="#">Hiking</a></li>
-                        <li><a href="#">Family Fun</a></li>
-                        <li><a href="#">Our Parks</a></li>
-                    </ul>
-                    <h3><a href="#">Three awesome places to hike near Radium Hot Springs</a></h3>
-                    <a class="read-more" href="#">6 Min Read &gt;</a>
-                </div>
-            </article>
-        </div>
-        <div class="story">
-            <article class="story-item" id="">
-                <div class="article-thumbnail">
-                    <a href="#"><img src="/wp-content/themes/tourismradium/images/article.png"></a>
-                </div>
-                <div class="article-content">
-                    <ul>
-                        <li><a href="#">Hiking</a></li>
-                        <li><a href="#">Family Fun</a></li>
-                        <li><a href="#">Our Parks</a></li>
-                    </ul>
-                    <h3><a href="#">Three awesome places to hike near Radium Hot Springs</a></h3>
-                    <a class="read-more" href="#">6 Min Read &gt;</a>
-                </div>
-            </article>
-        </div>
-        <div class="story">
-            <article class="story-item" id="">
-                <div class="article-thumbnail">
-                    <a href="#"><img src="/wp-content/themes/tourismradium/images/article.png"></a>
-                </div>
-                <div class="article-content">
-                    <ul>
-                        <li><a href="#">Hiking</a></li>
-                        <li><a href="#">Family Fun</a></li>
-                        <li><a href="#">Our Parks</a></li>
-                    </ul>
-                    <h3><a href="#">Three awesome places to hike near Radium Hot Springs</a></h3>
-                    <a class="read-more" href="#">6 Min Read &gt;</a>
-                </div>
-            </article>
-        </div>
-        <div class="story">
-            <article class="story-item" id="">
-                <div class="article-thumbnail">
-                    <a href="#"><img src="/wp-content/themes/tourismradium/images/article.png"></a>
-                </div>
-                <div class="article-content">
-                    <ul>
-                        <li><a href="#">Hiking</a></li>
-                        <li><a href="#">Family Fun</a></li>
-                        <li><a href="#">Our Parks</a></li>
-                    </ul>
-                    <h3><a href="#">Three awesome places to hike near Radium Hot Springs</a></h3>
-                    <a class="read-more" href="#">6 Min Read &gt;</a>
-                </div>
-            </article>
-        </div>
-        <div class="story">
-            <article class="story-item" id="">
-                <div class="article-thumbnail">
-                    <a href="#"><img src="/wp-content/themes/tourismradium/images/article.png"></a>
-                </div>
-                <div class="article-content">
-                    <ul>
-                        <li><a href="#">Hiking</a></li>
-                        <li><a href="#">Family Fun</a></li>
-                        <li><a href="#">Our Parks</a></li>
-                    </ul>
-                    <h3><a href="#">Three awesome places to hike near Radium Hot Springs</a></h3>
-                    <a class="read-more" href="#">6 Min Read &gt;</a>
-                </div>
-            </article>
-        </div>
-        <div class="story">
-            <article class="story-item" id="">
-                <div class="article-thumbnail">
-                    <a href="#"><img src="/wp-content/themes/tourismradium/images/article.png"></a>
-                </div>
-                <div class="article-content">
-                    <ul>
-                        <li><a href="#">Hiking</a></li>
-                        <li><a href="#">Family Fun</a></li>
-                        <li><a href="#">Our Parks</a></li>
-                    </ul>
-                    <h3><a href="#">Three awesome places to hike near Radium Hot Springs</a></h3>
-                    <a class="read-more" href="#">6 Min Read &gt;</a>
-                </div>
-            </article>
-        </div>
+            <?php endwhile; ?>
+        <?php endif;?>
+        <?php wp_reset_postdata(); ?>    
+
+
+      
     </div>
     <p class="center">
-        <a class="btn outline" href="/stories">Our Stories</a>
+        <a class="btn outline" href="/stories">View All</a>
     </p>
 </section>

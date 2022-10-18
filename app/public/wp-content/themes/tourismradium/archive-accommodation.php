@@ -12,18 +12,40 @@
 get_header();
 
 //$description = get_the_archive_description();
+
+// Get values for banner, headline and subheading from CMS if they exist
+// Banner
+if( get_field('accommodations_page_banner', 'option') ):
+	$banner = get_field('accommodations_page_banner', 'option');
+else:
+    $banner = '/wp-content/themes/tourismradium/images/accommodations/banner-where-to-stay.jpg';
+endif; 
+
+// Headline
+if( get_field('accommodations_page_headline', 'option') ):
+	$headline = get_field('accommodations_page_headline', 'option');
+else:
+    $headline = 'Where To Stay';
+endif;
+
+// Subheadline
+if( get_field('accommodations_page_subheadline', 'option') ):
+	$subheadline = get_field('accommodations_page_subheadline', 'option');
+else:
+    $subheadline = 'Radium is a place full of character and offers a variety of accommodations.';
+endif;
 ?>
 
-<section class="banner" style="background-image:url(/wp-content/themes/tourismradium/images/accommodations/banner-where-to-stay.jpg)">
+<section class="banner" style="background-image:url(<?php echo $banner; ?>)">
 	<div class="banner__content">
-		<h2>Where To Stay</h2>
-		<p>Radium is a place full of character and offers a variety of accommodations.</p>
+		<h1><?php echo $headline; ?></h1>
+		<p><?php echo $subheadline; ?></p>
 	</div>
 </section>
 
 <section class="page-heading">
-    <h1 class="heading-2">Accommodations</h1>
-    <p class="intro-text">Choose from amazing campgrounds, beautiful hotels and resorts, rustic cabins, charming B&B’s, unique throwback roadside motels and more!</p>
+    <h2 class="heading-2">Accommodations</h2>
+    <p class="intro-text">Choose from amazing campgrounds, beautiful hotels and resorts, rustic cabins, unique roadside motels and charming B&Bs!</p>
 </section>
 
 <section class="page-grid" id="results">
@@ -36,11 +58,13 @@ get_header();
             <li><a href="/accommodations?cat=12#results">Camping & RV</a></li>
             <li><a href="/accommodations#results">View All</a></li>
         </ul>
-        <div class="page-grid-dropdowns">
+
+        <div class="page-grid-dropdowns"> 
+        
             <?php
             $args = array(
-                'exclude' => '1',
-                //'show_option_all' => 'All',
+                'include' => '38,37,39,40,12',
+                'show_option_all' => 'View All',
                 'show_count' => 0,
                 'value_field'       => 'term_id',
                 'orderby'          => 'name',
@@ -50,14 +74,12 @@ get_header();
             ?>
             <?php wp_dropdown_categories($args); ?>
 
- 
-                <select name="sort-posts" id="sortbox" onchange="sessionStorage.setItem('sort-value',this.options[this.selectedIndex].id);document.location.href='?cat=<?php echo $_GET['cat']; ?>&'+this.options[this.selectedIndex].value;">
-       
-            <option value="orderby=title&order=asc#results">Sort</option>
+            <select name="sort-posts" id="sortbox" onchange="sessionStorage.setItem('sort-value',this.options[this.selectedIndex].id);document.location.href='?cat=<?php echo $_GET['cat']; ?>&'+this.options[this.selectedIndex].value;">
+                <option value="orderby=title&order=asc#results">Sort</option>
                 <!-- <option id="post-sort-latest" value="orderby=date&order=desc">Latest</option>
                 <option id="post-sort-oldest" value="orderby=date&order=asc">Oldest</option> -->
-                <option id="post-sort-title-asc" value="orderby=title&order=asc#results">Title Asc</option>
-                <option id="post-sort-title-desc" value="orderby=title&order=desc#results">Title Desc</option>
+                <option id="post-sort-title-asc" value="orderby=title&order=asc#results">A to Z</option>
+                <option id="post-sort-title-desc" value="orderby=title&order=desc#results">Z to A</option>
             </select>
 
             <script>
@@ -90,11 +112,22 @@ get_header();
 
     <div class="page-grid-results">
 
-        <?php if ( have_posts() ) : ?>
+<?php 
+    // The Query
+    $argsPost = array(
+        'cat' => $_GET['cat'],
+        //'post__not_in'=>array($array),
+        'post_type' => 'accommodation',
+        'orderby' => 'rand',
+        'posts_per_page' => 100
+    );
+    $the_query = new WP_Query( $argsPost );
 
-            <?php while ( have_posts() ) : ?>
+        if ( $the_query->have_posts()  ) : ?>
 
-            <?php the_post(); ?>
+            <?php while ( $the_query->have_posts() ) : ?>
+
+            <?php $the_query->the_post(); ?>
 
             <div class="accommodation-item">         
                 <article class="card">
@@ -112,9 +145,20 @@ get_header();
                         <?php if( get_field('accommodation_website_url', get_the_ID()) ): ?>
                             <p class="website"><a href="<?php the_field('accommodation_website_url', get_the_ID()); ?>" target="_blank">Visit website</a></p>
                         <?php endif; ?>  
+                        <p class="additional-info">
+
+                            <?php if( get_field('pets_allowed', get_the_ID()) ): ?>
+                                <span class="pets">Pets upon approval</span>
+                            <?php endif; ?>  
+
+                            <?php if( get_field('wheelchair_accessible', get_the_ID()) ): ?>
+                                <span class="accessible">Wheelchair accessible</span>
+                            <?php endif; ?>  
+                            </p>    
                         <?php if( get_field('accommodation_book_now_url', get_the_ID()) ): ?>
                             <a class="lnk-book-now" href="<?php the_field('accommodation_book_now_url', get_the_ID()); ?>" target="_blank">Book Now</a></p>
-                        <?php endif; ?>                          
+                        <?php endif; ?>   
+                                           
                     </div>
                 </article>
             </div> <!--/.accommodation-item-->
@@ -132,7 +176,7 @@ get_header();
     </div> <!--/.page-grid-results -->
     
     <!-- Pagination -->
-    <?php twenty_twenty_one_the_posts_navigation(); ?>
+    <?php custom_post_type_navigation(); ?>
 
 </section> <!--/.page-grid -->
 
@@ -191,8 +235,7 @@ $the_query = new WP_Query( $args );
         <?php wp_reset_postdata(); ?>    
     </div> <!--/.accommodations-listing-->
 
-      <p class="center"><a class="btn outline arrow" href="/accommodations">All Promotions</a></p>                      
+      <p class="center"><a class="btn outline arrow" href="/promotions">All Promotions</a></p>                      
 </section>
-
 
 <?php get_footer(); ?>

@@ -86,5 +86,5 @@ $the_query = new WP_Query( $args );
         <?php endif;?>
         <?php wp_reset_postdata(); ?>    
     </div> <!--/.promotions-listing-->
-<p class="center"><a class="btn outline arrow" href="/promotions">All Promotions</a></p>
+<p class="center"><a class="btn outline arrow" href="/promotions">View All</a></p>
 </section> <!--/.promotion-block-->

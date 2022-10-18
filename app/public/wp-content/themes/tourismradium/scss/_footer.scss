@@ -3,9 +3,15 @@ aside.widget-area,
     background-color: $purple;
     color: $white;
 }
-
+.site-footer {
+    background-color: rgba(85,81,111,1);
+}
 aside.widget-area {
     margin-top: 90px !important;
+    background-image: url(/wp-content/themes/tourismradium/images/graphics/footer_mountains.png);
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-size: cover;  
 
     h2 {
         color: $yellow;
@@ -15,7 +21,10 @@ aside.widget-area {
 
     .widget_media_image {
         img {
-            max-width: 275px !important;
+            max-width: 200px !important;
+            @media(min-width: 800px) {
+                max-width: 275px !important;                
+            }
         }
     }
 
@@ -68,7 +77,13 @@ aside.widget-area {
                 }
             }
         }
-    }    
+    }  
+    
+    @media(max-width: 480px) {
+        .widget ul {
+            padding-left: 10px;
+        }
+    }
 }
 
 .footer-navigation-wrapper {
