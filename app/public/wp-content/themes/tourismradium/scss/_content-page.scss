@@ -116,4 +116,9 @@
             }        
         }
     }
+    &.page-stay-soak {
+        .accommodation-block .btn {
+            display: none !important;
+        }
+    }    
 }

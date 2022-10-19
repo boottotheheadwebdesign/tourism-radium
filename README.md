@@ -7,4 +7,4 @@ https://webdesign.tutsplus.com/tutorials/watch-and-compile-sass-in-five-quick-st
 ```
 npm run scss
 ```
-This will compile the .scss file saved into css in the /css folder
+Run this in the /tourismradium theme folder. This will compile the .scss file saved into css in the /css folder.
