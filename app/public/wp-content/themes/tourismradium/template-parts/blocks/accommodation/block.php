@@ -78,7 +78,10 @@ $the_query = new WP_Query( $args );
             
             <?php endwhile; ?>
         <?php endif;?>
-        <?php wp_reset_postdata(); ?>    
+         
     </div> <!--/.accommodations-listing-->
-<p class="center"><a class="btn outline" href="/accommodations">All Accommodations</a></p>
+    <?php if( get_field('accommodation_show_all_button') == "on" ) : ?>
+        <p class="center"><a class="btn outline" href="/accommodations">All Accommodations</a></p>
+    <?php endif; ?>   
+    <?php wp_reset_postdata(); ?>         
 </section> <!--/.accommodation-block-->
