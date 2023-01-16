@@ -88,13 +88,14 @@
                 h3 {
                     @include heading($color: $purple);
                     font-size: 24px;
-
+                    margin-bottom: 10px;
+                    
                     @media(min-width: 768px) {
                         font-size: 32px;
                     }
 
                     @media(min-width: 1200px) {
-                        font-size: 40px;
+                        font-size: 40px;                        
                     }     
                     
                     a {

@@ -373,3 +373,49 @@ function add_cpt_og_image(){
 // 	return $img;
 // };
 // add_filter( 'wpseo_opengraph_image', 'ag_yoast_seo_fb_share_images', 10, 1 );
+
+// January 2023 - Site Enhancements
+//
+// *** This sorts Event post types by 'event_start_date'
+// *** Use this site: https://www.minddevelopmentanddesign.com/blog/how-to-order-the-wordpress-archive-templates-by-acf-date-picker-field/
+//
+/*
+function mind_pre_get_posts( $query ) {
+  
+  if( is_admin() ) {
+    return $query; 
+  }
+  if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'event' && $query->is_main_query() ) {
+    
+    $query->set('orderby', 'meta_value'); 
+    $query->set('meta_key', 'event_start_date');   
+    $query->set('order', 'ASC'); 
+    
+  }
+  return $query;
+}
+add_action('pre_get_posts', 'mind_pre_get_posts');
+*/
+function mind_pre_get_posts( $query ) {
+  
+  // do not modify queries in the admin
+  if( is_admin() ) {
+    return $query; 
+  }
+  // only modify queries for 'events' post type
+  if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'event'  && $query->is_main_query() ) {
+    $query->set('orderby', 'meta_value'); 
+    $query->set('order', 'ASC'); 
+    $query->set( 'meta_query', 
+        array(
+          array(
+                'key' => 'event_end_date',
+                'value' => date('Ymd'),
+                'compare' => '>='
+        )));   
+    
+  }
+  // return
+  return $query;
+}
+add_action('pre_get_posts', 'mind_pre_get_posts');

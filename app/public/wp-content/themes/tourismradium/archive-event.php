@@ -65,7 +65,7 @@ endif;
                 <article class="event">
                     <div class="event-bg" style="background-image:url('<?php echo $backgroundImg[0] ?>')">
                     <?php if( get_field('event_start_date') ): ?>
-                        <div class="event-date"><?php the_field('event_start_date'); ?></div>
+                        <!--div class="event-date"><?php the_field('event_start_date'); ?></div-->
                     <?php endif; ?>
                     </div>
                     <div class="event-details"> 
@@ -77,7 +77,21 @@ endif;
                             <h3><?php the_field('event_name', get_the_ID()); ?></h3>
                         <?php endif; ?> 
                     <?php endif; ?>                      
-
+                    <?php if( get_field('event_date_text') ): ?>
+                        <p style="margin-bottom:12px"><?php the_field('event_date_text'); ?></p>
+                    <?php else: ?>     
+                        <?php 
+                            $startDate = get_field('event_start_date');
+                            $startDateNum = date('Ymd', strtotime($startDate));
+                            $endDate = get_field('event_end_date');
+                            $endDateNum = date('Ymd', strtotime($endDate));                                                        
+                            if($endDateNum > $startDateNum ): 
+                        ?>
+                            <p style="margin-bottom:12px"><?php the_field('event_start_date'); ?> - <?php the_field('event_end_date'); ?></p>
+                        <?php else: ?>  
+                            <p style="margin-bottom:12px"><?php the_field('event_start_date'); ?></p>
+                        <?php endif; ?>    
+                    <?php endif; ?>
                     <?php if( get_field('event_short_description') ): ?>
                         <p><?php the_field('event_short_description'); ?></p>
                     <?php endif; ?>     
