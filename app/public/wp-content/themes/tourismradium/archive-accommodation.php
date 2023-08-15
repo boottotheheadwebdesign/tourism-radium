@@ -46,6 +46,9 @@ endif;
 <section class="page-heading">
     <h2 class="heading-2">Accommodations</h2>
     <p class="intro-text">Choose from amazing campgrounds, beautiful hotels and resorts, rustic cabins, unique roadside motels and charming B&Bs!</p>
+    <p class="center">
+        <a class="btn" href="https://radiumhotsprings.reservationsystems.com/English/Availability_Check.asp" target="_blank" rel="noreferrer">Book Your Stay</a>
+    </p>
 </section>
 
 <section class="page-grid" id="results">

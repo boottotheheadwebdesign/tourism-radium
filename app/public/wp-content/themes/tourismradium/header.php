@@ -81,6 +81,125 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<?php get_template_part( 'template-parts/header/site-header' ); ?>
 
+<style>
+/** Side Tab Sticky Button **/
+#side-sticky-tab {
+  position: fixed;
+  top: 35vh;
+  right: 50px;
+	z-index: 3;
+}
+
+#side-sticky-tab div {
+  margin: 0px;
+  padding: 0px;
+}
+
+#side-sticky-tab .sticky-container{
+   -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    -webkit-box-shadow: -10px 0px 25px -1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: -10px 0px 25px -1px rgba(0, 0, 0, 0.05);
+  box-shadow: -10px 0px 25px -1px rgba(0, 0, 0, 0.45);
+
+  border-radius: 6px 6px 0px 0px;
+  right: -168px;
+  position:fixed;  
+  transition-property: right;
+  transition-duration: .6s;
+}
+
+#side-sticky-tab .sticky-container:hover{
+  right: 0px;
+}
+
+#side-sticky-tab .callout {  
+  position: relative;
+  display:block;
+  border-radius: 6px 6px 0px 0px;  
+}
+
+
+#side-sticky-tab .slideout {
+  position:relative;
+  vertical-align:middle;
+  height: 180px;
+  display:block;
+  background-color: rgba(170,170, 170, .5);
+   -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);  
+}
+
+#side-sticky-tab .slideout .inner{
+  padding-top: 16%;
+  padding-bottom: 16%;
+  text-align:center;
+  
+}
+
+#side-sticky-tab .callout a {
+  color: white;
+  background-color: #CC0000;
+  height: 40px;
+  width: 180px;
+  margin: 0;
+  padding: 0;
+  z-index: 9999;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: 600;
+  border-radius: 6px 6px 0px 0px;
+}
+
+#side-sticky-tab a:hover {
+ /* background-color: #8c0000;*/
+}
+#side-sticky-button {
+	width: 180px;
+	position: fixed;
+	top: 25vh;
+	right: -180px;
+	z-index: 3;	
+}
+
+#side-sticky-button a {
+	color: #fff;
+	background-color: #D9A121;
+	padding: 15px;
+	transform-origin: 0 0;
+  transform: rotate(90deg);
+	font-size: 18px;
+	line-height: 1;
+	font-weight: bold;
+	text-align: center;
+	display: block;
+	text-decoration: none;
+	-webkit-box-shadow: -10px 0px 25px -1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: -10px 0px 25px -1px rgba(0, 0, 0, 0.05);
+  box-shadow: -10px 0px 25px -1px rgba(0, 0, 0, 0.45);
+  border-radius: 0px 0px 6px 6px;	
+	text-transform: uppercase;
+}
+#side-sticky-button a:hover,
+#side-sticky-button a:active,
+#side-sticky-button a:focus {
+	background-color: #403A60 !important;
+	color: #D9A121;
+}
+</style>
+<div id="side-sticky-button">
+  <a href="https://radiumhotsprings.reservationsystems.com/English/Availability_Check.asp" target="_blank">Book Your Stay</a>
+</div>
+
+</div>
 	<div id="content" class="site-content">
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
