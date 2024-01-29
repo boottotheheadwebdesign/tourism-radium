@@ -43,7 +43,7 @@ endif;
 
 <section class="page-heading">
     <h2 class="heading-2">Book Direct and Save</h1>
-    <p class="intro-text">Spring and summer in Radium is a magical time for hiking, biking and birding. Unwind with a round of golf, enjoy a river float or white water rafting.</p>
+    <p class="intro-text">Find great packages and promotions in the Village of Radium, all year round. From savings great activities in the area, to special room rates, plan your next adventure in Radium Hot Springs.</p>
 </section>
 
 <div class="current-promotions">
