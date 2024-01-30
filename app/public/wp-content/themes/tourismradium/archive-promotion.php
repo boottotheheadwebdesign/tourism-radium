@@ -19,18 +19,32 @@ else:
     $banner = '/wp-content/themes/tourismradium/images/services/banner-getting-around.jpg';
 endif; 
 
-// Headline
+// Banner Headline
 if( get_field('promotions_page_headline', 'option') ):
 	$headline = get_field('promotions_page_headline', 'option');
 else:
     $headline = "Promotions";
 endif;
 
-// Subheadline
+// Banner Subheadline
 if( get_field('promotions_page_subheadline', 'option') ):
 	$subheadline = get_field('promotions_page_subheadline', 'option');
 else:
     $subheadline = "Discover our nearby national parks, hit the trails or relax and rejuvenate at the spa. There's no shortage of things to see and do in Radium.";
+endif;
+
+// Page Heading 2
+if( get_field('promotions_page_heading_2', 'option') ):
+	$headline_2 = get_field('promotions_page_heading_2', 'option');
+else:
+    $headline_2 = "Book Direct and Save";
+endif;
+
+// Page Intro Text
+if( get_field('promotions_page_intro_text', 'option') ):
+	$introText = get_field('promotions_page_intro_text', 'option');
+else:
+    $introText = "Find great packages and promotions in the Village of Radium, all year round. From savings great activities in the area, to special room rates, plan your next adventure in Radium Hot Springs!";
 endif;
 ?>
 
@@ -42,8 +56,8 @@ endif;
 </section>
 
 <section class="page-heading">
-    <h2 class="heading-2">Book Direct and Save</h1>
-    <p class="intro-text">Find great packages and promotions in the Village of Radium, all year round. From savings great activities in the area, to special room rates, plan your next adventure in Radium Hot Springs.</p>
+    <h2 class="heading-2"><?php echo $headline_2; ?></h2>
+    <p class="intro-text"><?php echo $introText; ?></p>
 </section>
 
 <div class="current-promotions">
