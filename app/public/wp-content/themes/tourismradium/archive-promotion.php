@@ -56,7 +56,7 @@ endif;
 </section>
 
 <section class="page-heading">
-    <h2 class="heading-2"><?php echo $headline_2; ?></h2>
+    <h2 class="heading-2"><!--here--><?php echo $headline_2; ?></h2>
     <p class="intro-text"><?php echo $introText; ?></p>
 </section>
 

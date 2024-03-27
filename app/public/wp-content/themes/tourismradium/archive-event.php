@@ -78,7 +78,7 @@ endif;
                         <?php endif; ?> 
                     <?php endif; ?>                      
                     <?php if( get_field('event_date_text') ): ?>
-                        <p style="margin-bottom:12px"><?php the_field('event_date_text'); ?></p>
+                        <h4><strong><?php the_field('event_date_text'); ?></strong></h4>
                     <?php else: ?>     
                         <?php 
                             $startDate = get_field('event_start_date');
