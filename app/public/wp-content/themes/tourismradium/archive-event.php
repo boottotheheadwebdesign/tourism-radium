@@ -32,6 +32,20 @@ if( get_field('events_page_subheadline', 'option') ):
 else:
     $subheadline = 'Our event calendar is full of community and seasonal events in Radium and the Columbia Valley.';
 endif;
+
+// Page Heading 2
+if( get_field('events_page_heading_2', 'option') ):
+	$headline_2 = get_field('events_page_heading_2', 'option');
+else:
+    $headline_2 = "What's Happening";
+endif;
+
+// Page Intro Text
+if( get_field('events_page_intro_text', 'option') ):
+	$introText = get_field('events_page_intro_text', 'option');
+else:
+    $introText = "Learn more about seasonal and community events.";
+endif;
 ?>
 
 <section class="banner" style="background-image:url(<?php echo $banner; ?>)">
@@ -41,9 +55,16 @@ endif;
 	</div>
 </section>
 
+<!--
 <section class="page-heading">
     <h2 class="heading-2">What's Happening</h2>
     <p class="intro-text">Learn more about seasonal and community events.</p>
+</section>
+-->
+
+<section class="page-heading" style="padding: 70px 5%;">
+    <h2 class="heading-2"><?php echo $headline_2; ?></h2>
+    <p class="intro-text"><?php echo $introText; ?></p>
 </section>
 
 <div class="featured-events">
