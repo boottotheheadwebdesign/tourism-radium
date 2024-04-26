@@ -34,7 +34,7 @@ else:
     //'order' => 'asc',
     'post_type' => 'accommodation',
     'post__in' => $accommodations,
-    'posts_per_page' => 18
+    'posts_per_page' => 20
   );
 endif;
 
