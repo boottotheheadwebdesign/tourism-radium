@@ -5,7 +5,7 @@ function tourism_radium_scripts_styles() {
   wp_enqueue_script('tourism-radium', get_stylesheet_directory_uri().'/js/tourism-radium.js', array('jquery'), 1.0, true);   
   wp_enqueue_style('slick', get_stylesheet_directory_uri() . '/vendor/slick/slick.css', '', 1.0, false);
   wp_enqueue_style('slick-theme', get_stylesheet_directory_uri() . '/vendor/slick/slick-theme.css', '', 1.0, false);
-  wp_enqueue_style('tourism-radium', get_stylesheet_directory_uri() . '/css/tourism-radium.css', '', 1.0, false); // false loads this as last CSS, need this *
+  wp_enqueue_style('tourism-radium', get_stylesheet_directory_uri() . '/css/tourism-radium.css', '', 2.0, false); // false loads this as last CSS, need this *
 }
 add_action( 'wp_enqueue_scripts', 'tourism_radium_scripts_styles', 99);
 

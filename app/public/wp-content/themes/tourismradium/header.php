@@ -19,7 +19,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<?php wp_head(); ?>
 	<link rel="stylesheet" href="https://use.typekit.net/yig5crv.css">	
-    <script src="https://kit.fontawesome.com/8b0457928c.js" crossorigin="anonymous"></script>
+  <!--script src="https://kit.fontawesome.com/8b0457928c.js" crossorigin="anonymous"></script -->
 
 <!-- Facebook Pixel Code -->
 <script type='text/javascript'>
