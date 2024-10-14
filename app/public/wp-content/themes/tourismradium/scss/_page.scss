@@ -662,18 +662,18 @@
                     margin-bottom: 10px;
 
                     &:before {
-                        content: '\f3c5';
-                        font-family: $fa;
-                        display: block;
-                        margin-right: 10px;
-                        position: absolute;
-                        top: 0;
-                        left: 0;
+                        // content: '\f3c5';
+                        // font-family: $fa;
+                        // display: block;
+                        // margin-right: 10px;
+                        // position: absolute;
+                        // top: 0;
+                        // left: 0;
                     }                
                 }
                 &.phone {
                     &:before {
-                        content: '\f879';
+                        //content: '\f879';
                     }
                     a {
                         text-decoration: none;
@@ -683,7 +683,7 @@
                     margin-bottom: 15px;
 
                     &:before {
-                        content: '\f0ac';
+                        //content: '\f0ac';
                     }
                 }                  
             }

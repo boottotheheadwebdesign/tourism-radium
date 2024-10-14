@@ -64,23 +64,23 @@
             &.address,
             &.phone,
             &.website {
-                padding-left: 25px;
+                //padding-left: 25px;
                 position: relative;
                 margin-bottom: 4px;
 
                 &:before {
-                    content: '\f3c5';
-                    font-family: $fa;
-                    display: block;
-                    margin-right: 10px;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
+                    // content: '\f3c5';
+                    // font-family: $fa;
+                    // display: block;
+                    // margin-right: 10px;
+                    // position: absolute;
+                    // top: 0;
+                    // left: 0;
                 }                
             }
             &.phone {
                 &:before {
-                    content: '\f879';
+                    //content: '\f879';
                 }
                 a {
                     text-decoration: none;
@@ -90,7 +90,7 @@
                 margin-bottom: 15px;
 
                 &:before {
-                    content: '\f0ac';
+                    //content: '\f0ac';
                 }
             } 
             
@@ -106,20 +106,20 @@
                     padding-left: 24px;
                     
                     &:before {
-                        content: '\f1b0';
-                        font-family: $fa;
-                        display: block;
-                        margin-right: 5px;
-                        position: absolute;
-                        top: 3px;
-                        left: 0;
+                        // content: '\f1b0';
+                        // font-family: $fa;
+                        // display: block;
+                        // margin-right: 5px;
+                        // position: absolute;
+                        // top: 3px;
+                        // left: 0;
                     }                 
                 }
 
                 .accessible {
                     
                     &:before {
-                        content: '\f193';
+                        //content: '\f193';
                     }                 
                 }   
                 

@@ -82,15 +82,23 @@
                 }
             }
                 &:last-child {
+                    position: relative;
                     a {
                         span {
                             display: none;
                         }
                         &:before {
-                            content: '\f002';
-                            display: inline-block;
-                            font-family: $fa;     
-                            font-weight: 100;                     
+                            content: '';
+                            background-image: url(/wp-content/themes/tourismradium/images/icons/icon-search.svg);  
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            position: absolute;
+                            top: -18px;
+                            left: 0;
+                            width: 24px;
+                            height: 24px;
+                            display: inline-block;           
                         }
                     }
                 }            
@@ -102,32 +110,51 @@
             li {
                 &:nth-of-type(1),
                 &:nth-of-type(2),
-                &:nth-of-type(3) {
-                    a {
+                &:nth-of-type(3),
+                &:nth-of-type(4) {
+                    position: relative;
+                    padding-right: 12px;
+
+                    a { 
                         span {
                             display: none;
                         }
                         &:before {
-                            content: '\f082';
-                            display: inline-block;
-                            font-family: $fa-brands;                          
+                            content: '';
+                            background-image: url(/wp-content/themes/tourismradium/images/icons/icon-facebook.svg);  
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            position: absolute;
+                            top: -18px;
+                            left: 0;
+                            width: 24px;
+                            height: 24px;
+                            display: inline-block;  
                         }
                     }
                 }
                 &:nth-of-type(2) {
                     a {
                         &:before {
-                            content: '\f099';                    
+                            background-image: url(/wp-content/themes/tourismradium/images/icons/icon-instagram.svg);                    
                         }
                     }
                 }
                 &:nth-of-type(3) {
                     a {
                         &:before {
-                            content: '\f16d';                       
+                            background-image: url(/wp-content/themes/tourismradium/images/icons/icon-youtube.svg);                        
                         }
                     }
-                }                                
+                }   
+                &:nth-of-type(4) {
+                    a {
+                        &:before {
+                            background-image: url(/wp-content/themes/tourismradium/images/icons/icon-tiktok.svg);                        
+                        }
+                    }
+                }                                              
             }
         }
     }

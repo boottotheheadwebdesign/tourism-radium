@@ -1,7 +1,6 @@
 
 // Home page styles
 .home {
-
     #masthead {
         background-color: transparent;
     }    
@@ -31,7 +30,7 @@
     .wp-block-cover {
         min-height: 80vh !important;
 
-        @media(min-width:482) and(max-width: 768px) {
+        @media(min-width:482) and (max-width: 768px) {
             min-height: 70vh !important;
         }        
         @media(min-width:769px) and (max-width: 1024px) {

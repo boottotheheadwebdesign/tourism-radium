@@ -1,15 +1,15 @@
 {
   "name": "tourismradium",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "scss for tourism radium project",
   "main": "index.js",
   "scripts": {
-    "sass:watch": "sass --no-source-map -w scss:css",
-    "sass:release": "sass --style=compressed --no-source-map -w scss:css"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss -o css --output-style compressed"
   },
   "author": "Colin Cheverie",
   "license": "ISC",
   "dependencies": {
-    "sass": "^1.49.9"
+    "node-sass": "^5.0.0"
   }
 }

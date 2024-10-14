@@ -278,17 +278,16 @@ h1, h2, h3, h4, h5, h6, p, li, a, div {
     text-decoration: none;
     text-transform: uppercase;
     position: relative;
-    padding-right: 25px;
+    //padding-right: 25px;
     margin-top: 15px;
     
     &:after {
-        content: '\f35d';
-        font-family: $fa;
-        position: absolute;
-        top: -2px;
-        right: 0;
-        font-weight: normal;
-        
+        // content: '\f35d';
+        // font-family: $fa;
+        // position: absolute;
+        // top: -2px;
+        // right: 0;
+        // font-weight: normal;
     }
 
     &:hover {
